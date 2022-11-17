@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
 import {
   Box,
   Text,
@@ -8,7 +9,9 @@ import {
   Link,
   Kbd,
   Spinner,
+  HStack,
 } from '@chakra-ui/react';
+import buildspaceLogo from '../assets/buildspace-logo.png';
 
 const Home = () => {
   const [input, setInput] = useState('');
@@ -46,7 +49,6 @@ const Home = () => {
   }, [input]);
 
   useEffect(() => {
-    console.log('checking local storage...');
     const scratchPadText = localStorage.getItem('scratchpad');
     setInput(scratchPadText);
   }, []);
@@ -68,20 +70,29 @@ const Home = () => {
   }, [input, generateAction]);
 
   return (
-    <Flex minHeight="100vh" bg="black">
-      <Flex w="100%" alignItems="center" justifyContent="center">
-        <VStack w="100%" color="white" spacing={5}>
-          <VStack maxW={{ base: '80%', md: '60%', lg: '50%' }}>
-            <Text fontWeight="bold" fontSize="4xl">
-              ScratchPad
+    <Flex position="relative" minHeight="100vh">
+      <Flex
+        position="absolute"
+        h="100%"
+        w="100%"
+        bgColor="black"
+        flexDirection="column"
+        letterSpacing="-0.08em"
+      >
+        <VStack
+          w="100%"
+          height="100%"
+          spacing={5}
+          color="white"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <VStack padding={3}>
+            <Text color="white" fontWeight="bold" fontSize="5xl" pl={3} pt={1}>
+              Scratchpad
             </Text>
-            <Text fontSize="lg">
-              Write your first story, movie script, or song in 2 minutes. Start
-              by typing a few sentences and press{' '}
-              <Kbd color="gray.700">ctrl</Kbd> or{' '}
-              <Kbd color="gray.700">cmd</Kbd> +{' '}
-              <Kbd color="gray.700">enter</Kbd> to have your AI writer to help
-              you generate the rest!
+            <Text color="white" fontSize="2xl" textAlign="center">
+              Write your own song, movie script, or anime in 2 minutes.
             </Text>
           </VStack>
           <Box
@@ -107,38 +118,62 @@ const Home = () => {
                 zIndex="1"
                 bottom={0}
                 right={0}
-                bgColor="blue.400"
+                bgColor="white"
                 padding={2}
                 mb={3}
                 mr={2}
                 borderRadius={5}
               >
-                <Text fontWeight="bold">Keep writing to generate more!</Text>
+                <Text color="black" fontWeight="bold" letterSpacing="-0.01em">
+                  Keep writing to generate more!
+                </Text>
               </Flex>
             )}
             <Textarea
-              h="100%"
               w="100%"
+              h="100%"
               fontSize="18px"
-              bgColor="#2A2C34"
               variant="outline"
               placeholder="type here to get started"
               value={input}
               onChange={onChange}
               isDisabled={isGenerating}
+              bgColor="gray.900"
             />
+            <Flex>
+              <Text
+                pt={2}
+                fontSize="lg"
+                fontWeight="bold"
+                letterSpacing="-0.01em"
+              >
+                Press <Kbd color="gray.700">ctrl</Kbd> or{' '}
+                <Kbd color="gray.700">cmd</Kbd> +{' '}
+                <Kbd color="gray.700">enter</Kbd> to have your AI writer to help
+                you generate the rest!
+              </Text>
+            </Flex>
           </Box>
-          <Text fontSize="xl">
-            built with{' '}
-            <Link
-              fontWeight="bold"
-              color="blue.300"
-              href="https://buildspace.so/builds/ai-writer"
-              isExternal
-            >
-              buildspace
-            </Link>
-          </Text>
+
+          <HStack
+            w="100%"
+            position="absolute"
+            bottom={0}
+            justifyContent="center"
+            pb={5}
+          >
+            <Image src={buildspaceLogo} width={25} alt="buildspace logo" />
+            <Text fontSize="lg">
+              build on{' '}
+              <Link
+                color="blue.300"
+                href="https://buildspace.so/builds/ai-writer"
+                isExternal
+              >
+                buildspace
+              </Link>
+            </Text>
+          </HStack>
         </VStack>
       </Flex>
     </Flex>
@@ -146,7 +181,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// <Flex bgColor="green.300" w="100%" justifyContent="flex-end">
-//   <Button color="black">Save</Button>
-// </Flex>;
