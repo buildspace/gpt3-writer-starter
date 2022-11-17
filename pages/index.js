@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import {
   Box,
-  Button,
   Text,
   Flex,
   VStack,
@@ -47,11 +46,18 @@ const Home = () => {
   }, [input]);
 
   useEffect(() => {
+    console.log('checking local storage...');
+    const scratchPadText = localStorage.getItem('scratchpad');
+    setInput(scratchPadText);
+  }, []);
+
+  useEffect(() => {
     const keydownHandler = async (event) => {
       if ((event.metaKey || event.ctrlKey) && event.code === 'Enter') {
         event.preventDefault();
         await generateAction();
       }
+      localStorage.setItem('scratchpad', input);
     };
 
     window.addEventListener('keydown', keydownHandler);
@@ -59,27 +65,28 @@ const Home = () => {
     return () => {
       window.removeEventListener('keydown', keydownHandler);
     };
-  }, [generateAction]);
+  }, [input, generateAction]);
 
   return (
     <Flex minHeight="100vh" bg="black">
       <Flex w="100%" alignItems="center" justifyContent="center">
-        <VStack w="100%" color="white" spacing={10}>
-          <VStack maxW={{ base: '80%', md: '60%', lg: '40%' }}>
+        <VStack w="100%" color="white" spacing={5}>
+          <VStack maxW={{ base: '80%', md: '60%', lg: '50%' }}>
             <Text fontWeight="bold" fontSize="4xl">
               ScratchPad
             </Text>
-            <Text fontSize="xl">
-              Write your first story, movie script, or song in 2 minutes. Type a
-              few sentences and just press <Kbd color="gray.700">ctrl</Kbd> or{' '}
+            <Text fontSize="lg">
+              Write your first story, movie script, or song in 2 minutes. Start
+              by typing a few sentences and press{' '}
+              <Kbd color="gray.700">ctrl</Kbd> or{' '}
               <Kbd color="gray.700">cmd</Kbd> +{' '}
-              <Kbd color="gray.700">enter</Kbd> to have your AI writer generate
-              the rest!
+              <Kbd color="gray.700">enter</Kbd> to have your AI writer to help
+              you generate the rest!
             </Text>
           </VStack>
           <Box
-            h={{ base: '250px', md: '500px', lg: '750px' }}
-            w={{ base: '80%', md: '60%', lg: '40%' }}
+            h={{ base: '250px', md: '350px', lg: '400px' }}
+            w={{ base: '80%', md: '60%', lg: '50%' }}
             position="relative"
           >
             {isGenerating && (
@@ -139,3 +146,7 @@ const Home = () => {
 };
 
 export default Home;
+
+// <Flex bgColor="green.300" w="100%" justifyContent="flex-end">
+//   <Button color="black">Save</Button>
+// </Flex>;
