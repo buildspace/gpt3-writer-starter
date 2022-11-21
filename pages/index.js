@@ -49,7 +49,7 @@ const Home = () => {
               onChange={onChange}
             />
             <textarea
-              className="text-area"
+              className="text-area text-area-output"
               placeholder="your lyrics and song titles will go here"
               value={output}
               disabled
