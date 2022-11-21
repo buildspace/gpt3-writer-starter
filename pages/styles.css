@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    font-family: SF Pro Display, Inter, serif;
+}
+
+.root {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+    font-family: SF Pro Display,
+        serif;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    color: #000;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 0;
+    padding-top: 1em;
+    letter-spacing: -0.04em;
+}
+
+.header-subtitle {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+}
+
+.text-area {
+    font-family: SF Pro Display,
+            serif;
+    color: #000;
+    width: 100%;
+    height: 400px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #EDF2F7;
+    border-color: rgba(118, 118, 118, 0.3);
+    border-width: 2px;
+}
+
+.text-area-output {
+    position: relative;
+}
+
+.generate-button {
+    width: 40%;
+    font-family: Inter,
+            sans-serif;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    border-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.generate-button p {
+    margin: 0;
+}
+
+.generate-button:disabled {
+    background-color: #d2d2d2;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.footer p {
+    padding-left: 5px;
+}
+
+.footer a {
+    text-decoration: none;
+    font-weight: 500;
+    color:#63b3ed;
+    padding-left: 5px;
+}
+
+ /* Loading ring animation */
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    margin: 4px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #000 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
