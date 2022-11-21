@@ -23,7 +23,6 @@ const generateAction = async (req, res) => {
 
   // Run second prompt with prefix
   const finalPrompt = `${finalPromptPrefix}${req.body.input}${baseChoice.text}`;
-  console.log(finalPrompt);
 
   const prefixCompletion = await openai.createCompletion({
     model: 'text-davinci-002',
