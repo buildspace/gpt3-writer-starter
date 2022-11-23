@@ -58,6 +58,10 @@ body {
     margin: 0;
 }
 
+.header-title h1:last-child {
+    color: rgb(255, 79, 18)
+}
+
 .header-subtitle h2 {
     font-size: 20px;
     font-style: normal;
@@ -199,6 +203,72 @@ body {
     margin: 0;
 }
 
+.loading {
+    opacity: 0.7;
+    cursor: default;
+}
+
+.badge-container {
+    display: flex;
+    bottom: 20px;
+    flex: 0 0 auto;
+    height: auto;
+    left: 20px;
+    position: fixed;
+    width: auto;
+    z-index: 1;
+}
+
+.badge-container a {
+    border-bottom-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-top-width: 1px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 54.3478% / 238.095%;
+    filter: grayscale(1);
+    transform: none;
+    transform-origin: 50% 50% 0px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1em;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+}
+
+.badge img {
+    width: 21px;
+    height: 17px;
+    image-rendering: pixelated;
+    flex-shrink: 0;
+    fill: black;
+    color: black;
+    transform: none;
+    transform-origin: 50% 50% 0px;
+    padding-right: 5px;
+}
+
+.badge p {
+    margin: 0;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
 .output {
     place-content: center flex-start;
     align-items: center;
@@ -324,39 +394,18 @@ body {
 
 
  /* Loading ring animation */
-.lds-ring {
-    display: inline-block;
-    position: relative;
-    width: auto;
-    height: 20px;
-}
-
-.lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
+.loader {
     width: 18px;
     height: 18px;
-    margin: 4px;
-    border: 2px solid #000;
     border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #000 transparent transparent transparent;
+    display: inline-block;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite; 
 }
 
-.lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-}
-
-.lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-}
-
-.lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-}
-
-@keyframes lds-ring {
+@keyframes rotation {
     0% {
         transform: rotate(0deg);
     }
