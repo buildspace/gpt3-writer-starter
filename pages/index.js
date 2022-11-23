@@ -12,6 +12,8 @@ const Home = () => {
   };
 
   const generateAction = useCallback(async () => {
+    if (isGenerating) return;
+
     setIsGenerating(true);
     const response = await fetch('/api/generate', {
       method: 'POST',
@@ -29,60 +31,80 @@ const Home = () => {
     );
 
     setIsGenerating(false);
-  }, [input]);
+  }, [input, isGenerating]);
+
+  useEffect(() => {
+    const keydownHandler = async (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.code === 'Enter') {
+        event.preventDefault();
+        await generateAction();
+      }
+    };
+
+    window.addEventListener('keydown', keydownHandler);
+
+    return () => {
+      window.removeEventListener('keydown', keydownHandler);
+    };
+  }, [generateAction]);
 
   return (
     <div className="root">
       <div className="container">
-        <div className="content">
-          <div className="header">
-            <p className="header-title">Scratchpad</p>
-            <p className="header-subtitle">
-              Write your first song in the style of your favorite artist.
-            </p>
+        <div className="header">
+          <div className="header-title">
+            <h1>GPT-3</h1>
+            <h1>Writer</h1>
           </div>
-          <div className="text-container">
-            <textarea
-              className="text-area"
-              placeholder="write some lyrics here to get started"
-              value={input}
-              onChange={onChange}
-            />
-            <textarea
-              className="text-area text-area-output"
-              placeholder="your lyrics and song titles will go here"
-              value={output}
-              disabled
-            />
+          <div className="header-subtitle">
+            <h2>Write your first song in the style of your favorite artist.</h2>
           </div>
-          <button
-            className="generate-button"
-            onClick={generateAction}
-            disabled={isGenerating}
-          >
-            {isGenerating ? (
-              <div class="lds-ring">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+        </div>
+        <div className="prompt-container">
+          <textarea className="prompt-box" value={input} onChange={onChange} />
+          <div className="prompt-buttons">
+            <div className="key-stroke">
+              <p>cmd/ctrl + enter</p>
+            </div>
+            <div className="or">
+              <p>OR</p>
+            </div>
+            <a
+              className={
+                isGenerating ? 'generate-button loading' : 'generate-button'
+              }
+              onClick={generateAction}
+            >
+              <div className="generate">
+                {isGenerating ? <span class="loader"></span> : <p>Generate</p>}
               </div>
-            ) : (
-              <p>Generate</p>
-            )}
-          </button>
+            </a>
+          </div>
         </div>
-        <div className="footer">
-          <Image src={buildspaceLogo} width={25} alt="buildspace logo" />
-          <p>build on</p>
-          <a
-            href="https://buildspace.so/builds/ai-writer"
-            target="_blank"
-            rel="noreferrer"
-          >
-            buildspace
-          </a>
-        </div>
+        {output && (
+          <div className="output">
+            <div className="output-header-container">
+              <div className="output-header">
+                <h3>Output</h3>
+              </div>
+            </div>
+            <div className="output-content">
+              <p>{output}</p>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="badge-container grow">
+        <a
+          href="https://buildspace.so/builds/ai-writer"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="badge">
+            <Image src={buildspaceLogo} alt="buildspace logo" />
+            <p>build with buildspace</p>
+          </div>
+        </a>
       </div>
     </div>
   );
