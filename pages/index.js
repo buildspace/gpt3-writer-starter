@@ -63,12 +63,6 @@ const Home = () => {
         <div className="prompt-container">
           <textarea className="prompt-box" value={input} onChange={onChange} />
           <div className="prompt-buttons">
-            <div className="key-stroke">
-              <p>cmd/ctrl + enter</p>
-            </div>
-            <div className="or">
-              <p>OR</p>
-            </div>
             <a
               className={
                 isGenerating ? 'generate-button loading' : 'generate-button'
