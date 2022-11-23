@@ -27,7 +27,7 @@ body {
     flex-flow: column nowrap;
     gap: 10px;
     height: fit-content;
-    max-width: 900px;
+    max-width: 1200px;
     overflow: scroll;
     padding: 50px;
     position: relative;
@@ -54,8 +54,8 @@ body {
     font-size: 72px;
     letter-spacing: -4px;
     line-height: 1.2em;
-    margin: 0;
     text-align: center;
+    margin: 0;
 }
 
 .header-subtitle h2 {
