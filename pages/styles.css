@@ -27,7 +27,7 @@ body {
     flex-flow: column nowrap;
     gap: 10px;
     height: fit-content;
-    max-width: 1200px;
+    max-width: 900px;
     overflow: scroll;
     padding: 50px;
     position: relative;
@@ -55,10 +55,7 @@ body {
     letter-spacing: -4px;
     line-height: 1.2em;
     margin: 0;
-}
-
-.header-title h1:last-child {
-    color: rgb(255, 79, 18)
+    text-align: center;
 }
 
 .header-subtitle h2 {
