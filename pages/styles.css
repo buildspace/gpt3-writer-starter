@@ -103,16 +103,18 @@ body {
     overflow: auto;
     outline: none;
     resize: none;
-    font-family: "Manrope", serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 600;
     letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     text-transform: none;
+}
+
+textarea {
+    font-family: 'Manrope', sans-serif;
 }
 
 .prompt-box:focus {
