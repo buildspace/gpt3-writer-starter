@@ -1,4 +1,4 @@
-@import url('https: //fonts.googleapis.com/css?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
 
 body {
     margin: 0;
@@ -116,6 +116,7 @@ body {
 textarea {
     font-family: 'Manrope', sans-serif;
 }
+
 
 .prompt-box:focus {
     border-color:rgba(255, 255, 255, 0.75)
