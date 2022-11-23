@@ -12,6 +12,8 @@ const Home = () => {
   };
 
   const generateAction = useCallback(async () => {
+    if (isGenerating) return;
+
     setIsGenerating(true);
     const response = await fetch('/api/generate', {
       method: 'POST',
@@ -29,7 +31,22 @@ const Home = () => {
     );
 
     setIsGenerating(false);
-  }, [input]);
+  }, [input, isGenerating]);
+
+  useEffect(() => {
+    const keydownHandler = async (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.code === 'Enter') {
+        event.preventDefault();
+        await generateAction();
+      }
+    };
+
+    window.addEventListener('keydown', keydownHandler);
+
+    return () => {
+      window.removeEventListener('keydown', keydownHandler);
+    };
+  }, [generateAction]);
 
   return (
     <div className="root">
@@ -52,18 +69,14 @@ const Home = () => {
             <div className="or">
               <p>OR</p>
             </div>
-            <a className="generate-button" onClick={generateAction}>
+            <a
+              className={
+                isGenerating ? 'generate-button loading' : 'generate-button'
+              }
+              onClick={generateAction}
+            >
               <div className="generate">
-                {/* {!isGenerating ? (
-                  <div class="lds-ring">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                ) : ( */}
-                <p>Generate</p>
-                {/* )} */}
+                {isGenerating ? <span class="loader"></span> : <p>Generate</p>}
               </div>
             </a>
           </div>
@@ -80,6 +93,18 @@ const Home = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className="badge-container grow">
+        <a
+          href="https://buildspace.so/builds/ai-writer"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="badge">
+            <Image src={buildspaceLogo} alt="buildspace logo" />
+            <p>build with buildspace</p>
+          </div>
+        </a>
       </div>
     </div>
   );
