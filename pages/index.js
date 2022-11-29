@@ -12,7 +12,9 @@ const Home = () => {
     "The Future of Questions is Here – Try It Now!",
     "Enhance Your Understanding of Complex Topics with AI Questions!",
     "Learn Faster with AI Questions!",
-    "Generate Clever Questions with the Click of a Button!"
+    "Generate Clever Questions with the Click of a Button!",
+    "Get Creative With Your Questions!",
+    "Generate Questions for Your Next Quiz!",
   ];
   useEffect(() => {
     setRandomNumber(Math.floor(Math.random() * subHeaderList.length));
