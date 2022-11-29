@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(40, 45, 53);
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -321,7 +321,7 @@ textarea {
 }
 
 .output-content p {
-    text-align: center;
+    text-align: left;
     white-space: pre-line;
     color: rgba(255, 255, 255, 0.5);
 }
