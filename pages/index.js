@@ -15,6 +15,8 @@ const Home = () => {
     "Generate Clever Questions with the Click of a Button!",
     "Get Creative With Your Questions!",
     "Generate Questions for Your Next Quiz!",
+    "Tap Into the Power of AI: Generate Questions On Demand!",
+    "Become a Master of Questions with AI!",
   ];
   useEffect(() => {
     setRandomNumber(Math.floor(Math.random() * subHeaderList.length));
