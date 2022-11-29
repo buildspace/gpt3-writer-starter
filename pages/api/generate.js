@@ -9,7 +9,7 @@ const openai = new OpenAIApi(configuration);
 const basePromptPrefix = "write a poem in the style Rumi about ";
 const generateAction = async (req, res) => {
   // Run first prompt
-  console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
+  console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
 
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
@@ -19,7 +19,7 @@ const generateAction = async (req, res) => {
   });
   
   const basePromptOutput = baseCompletion.data.choices.pop();
-  // Send over the Prompt #2's output to our UI instead of Prompt #1's.
+
   res.status(200).json({ output: basePromptOutput });
 };
 
