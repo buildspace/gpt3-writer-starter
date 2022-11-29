@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Image from 'next/image';
 import BuildspaceLogo from '../assets/Buildspace-logo.png';
+import Typewriter from 'typewriter-effect';
 
 
 const Home = () => {
@@ -44,7 +45,17 @@ const callGenerateEndpoint = async () => {
             <h1>Rumi Writer</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Ask Rumi to write you a poem about anything you want!</h2>
+            <h2>
+              <Typewriter 
+              options={{
+                strings: ['Ask Rumi to write you a poem about anything',],
+                autoStart: true,
+                loop: true,
+                delay: 50,
+                pauseFor: 10000,
+                
+              }} />
+            </h2>
           </div>
         </div>
     <div className="prompt-container">
