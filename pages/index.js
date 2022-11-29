@@ -1,5 +1,8 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import Image from 'next/image';
+import BuildspaceLogo from '../assets/Buildspace-logo.png';
+
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
@@ -61,6 +64,8 @@ const callGenerateEndpoint = async () => {
   <div className="output">
     <div className="output-header-container">
       <div className="output-header">
+      <Image className='small' src={BuildspaceLogo} alt="buildspace logo" />
+        <h2></h2>
         <h3>Poem by Rumi</h3>
       </div>
     </div>
