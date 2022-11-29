@@ -38,7 +38,7 @@ const Home = () => {
             </div>
             <div className="badge-container grow">
                 <a
-                    href="https://buildspace.so/builds/ai-writer"
+                    href="https://github.com/buildspace/gpt3-writer-starter"
                     target="_blank"
                     rel="noreferrer"
                 >
