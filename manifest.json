@@ -1,0 +1,18 @@
+{
+  "name": "magic blog post generator",
+  "description": "highlight your blog post title, we'll generate the rest",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "48": "assets/48.png",
+    "72": "assets/72.png",
+    "96": "assets/96.png",
+    "144": "assets/144.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Generate blog post"
+  },
+  // Add this line
+  "permissions": ["contextMenus", "tabs", "storage"]
+}
