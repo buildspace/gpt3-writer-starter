@@ -39,10 +39,10 @@ const callGenerateEndpoint = async () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>sup, insert your headline here</h1>
+            <h1>Genius Coder</h1>
           </div>
           <div className="header-subtitle">
-            <h2>insert your subtitle here</h2>
+            <h2>Ask me anything, I know most of the shit about coding! From writing react boilerplates, Implementing a Binary tree to helping you with queries related to any programming language. Just type in English with details! </h2>
           </div>
         </div>
         <div className="prompt-container">
