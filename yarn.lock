@@ -381,6 +381,11 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
+"@sentry/types@^6.11.0":
+  version "6.19.7"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.19.7.tgz#c6b337912e588083fc2896eb012526cf7cfec7c7"
+  integrity sha512-jH84pDYE+hHIbVnab3Hr+ZXr1v8QABfhx39KknxqKWr2l0oEItzepV0URvbEhB446lk/S/59230dlUUIBGsXbg==
+
 "@swc/helpers@0.4.14":
   version "0.4.14"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.4.14.tgz#1352ac6d95e3617ccb7c1498ff019654f1e12a74"
@@ -1082,6 +1087,11 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
+fflate@^0.4.1:
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/fflate/-/fflate-0.4.8.tgz#f90b82aefbd8ac174213abb338bd7ef848f0f5ae"
+  integrity sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==
+
 file-entry-cache@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/file-entry-cache/-/file-entry-cache-6.0.1.tgz#211b2dd9659cb0394b073e7323ac3c933d522027"
@@ -1628,6 +1638,13 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+next-use-posthog@^1.16.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/next-use-posthog/-/next-use-posthog-1.16.1.tgz#3ab439c5f735a00a9956aab1e8c163b3bc1a4417"
+  integrity sha512-oHdjuaPOcXfnjUdOtirqKCdoZ239smUUGLDrsI/EeWrhpiHSzt8060hDbRdd2erqueX6TM4E7JYUNYuE+J/BoA==
+  dependencies:
+    posthog-js "1.16.0"
+
 next@^13.0.5:
   version "13.0.5"
   resolved "https://registry.yarnpkg.com/next/-/next-13.0.5.tgz#cddfd6804f84a21721da370e4425980876670173"
@@ -1825,6 +1842,15 @@ postcss@8.4.14:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
+posthog-js@1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.16.0.tgz#60c24151d42f147b8513ecd0d41c768dc7c374ec"
+  integrity sha512-7gE4fDSCD7wzdr+Jb/dOIqUubsc4ahnyJYXKudDF+LcuhGX8qP8wRj8WA6JtyQDS1mqSH3Y+AwOWzfC9W8UIMQ==
+  dependencies:
+    "@sentry/types" "^6.11.0"
+    fflate "^0.4.1"
+    rrweb-snapshot "^1.1.7"
+
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
@@ -1922,6 +1948,11 @@ rimraf@^3.0.2:
   integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   dependencies:
     glob "^7.1.3"
+
+rrweb-snapshot@^1.1.7:
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/rrweb-snapshot/-/rrweb-snapshot-1.1.14.tgz#9d4d9be54a28a893373428ee4393ec7e5bd83fcc"
+  integrity sha512-eP5pirNjP5+GewQfcOQY4uBiDnpqxNRc65yKPW0eSoU1XamDfc4M8oqpXGMyUyvLyxFDB0q0+DChuxxiU2FXBQ==
 
 run-parallel@^1.1.9:
   version "1.2.0"
