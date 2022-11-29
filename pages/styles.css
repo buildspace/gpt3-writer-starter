@@ -172,7 +172,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: rgb(4, 125, 16);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -200,6 +200,7 @@ textarea {
 .generate p {
     color: rgb(255, 255, 255);
     margin: 0;
+    align-items: center;
 }
 
 .loading {
