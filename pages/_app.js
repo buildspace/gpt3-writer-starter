@@ -7,9 +7,8 @@ import { useEffect } from 'react';
 function App({ Component, pageProps }) 
 {
   useEffect(() => {
-    posthog.init('phc_orRjN4marLj8TAX5Ryg6e0KuiVsdNZ8J7vEWbSQVOob', { api_host: 'https://app.posthog.com' });
-  }
-  , [])
+    posthog.init('phc_orRjN4marLj8TAX5Ryg6e0KuiVsdNZ8J7vEWbSQVOob', { api_host: 'https://app.posthog.com' })
+  }, [])
   
   const router = useRouter();
 
