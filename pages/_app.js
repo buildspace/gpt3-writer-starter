@@ -7,12 +7,20 @@ import { useEffect } from 'react';
 function App({ Component, pageProps }) 
 {
   useEffect(() => {
-    posthog.init('phc_orRjN4marLj8TAX5Ryg6e0KuiVsdNZ8J7vEWbSQVOob', { api_host: 'https://app.posthog.com' })
+    posthog.init('phc_md48ciqZ581q2Fbsji2cbGP9okTrJW9ESQ1icSysvZK', { api_host: 'https://app.posthog.com' });
+  
+    const handleRouteChange = () => posthog.capture('$pageview');
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  
   }, [])
   
   const router = useRouter();
 
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 
 }
 export default App;
