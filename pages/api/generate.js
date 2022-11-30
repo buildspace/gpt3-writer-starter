@@ -6,7 +6,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = "write a poem in the style of Rumi with the first half of the line rhythming with the second half of the line and each line having 10-11 syllables and a rhythm every 6 syllables about ";
+const basePromptPrefix = " write a cuplate poem simlar to this poem  In a boat on the lake, we said what's at stake is more than simple truth for an eye or tooth. Rather, we, of a mind, cautioned to be kind was the best gift of all to avoid a fall into certain madness and echoed sadness. So we side-stepped debate, tucked aside our hate like hats hold a feather, and talked of whether,we should get off the lake and eat a fresh cake, finding to our surprise our teeth and our eyes had a similar goal to eat pastries whole.  about the following subject: ";
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
