@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useState } from 'react';
+
 import buildspaceLogo from '../assets/buildspace-logo.png';
 
 const Home = () => {
@@ -16,6 +18,9 @@ const Home = () => {
           <div className="header-subtitle">
             <h2>insert your subtitle here</h2>
           </div>
+        </div>
+        <div className="prompt-container">
+          <textarea placeholder="start typing here" className="prompt-box" />
         </div>
       </div>
       <div className="badge-container grow">
