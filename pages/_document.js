@@ -5,13 +5,13 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content="GPT-3 Writer" key="title"/>
-        <meta property="og:description" content="build with buildspace" key="description"/>
+        <meta property="og:title" content="Rumi Writer" key="title"/>
+        <meta property="og:description" content="" key="description"/>
         <meta
           property="og:image"
           content="/favicon.ico"
         />
-        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta name="twitter:card" content="/favicon.ico"></meta>
       </Head>
       <body>
         <Main />
