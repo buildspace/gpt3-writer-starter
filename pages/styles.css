@@ -98,7 +98,7 @@ body {
     padding: 20px;
     position: relative;
     width: 610px;
-    max-width: 540px;
+    max-width: 300px;
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -183,7 +183,7 @@ textarea {
 
 .generate-button {
     place-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     background-color: rgb(4, 125, 16);
     border-radius: 100px;
     display: flex;
@@ -239,7 +239,7 @@ textarea {
     border-style: solid;
     border-top-width: 1px;
     background-color: rgb(0, 0, 0);
-    border-radius: 54.3478% / 238.095%;
+    border-radius: 80.3478% / 238.095%;
     filter: grayscale(1);
     transform: none;
     transform-origin: 50% 50% 0px;
@@ -247,7 +247,7 @@ textarea {
     font-weight: 700;
     letter-spacing: -0.5px;
     line-height: 1em;
-    color: #fff;
+    color: rgb(255, 255, 255);
     padding: 12px;
     text-decoration: none;
 }
