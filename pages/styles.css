@@ -37,6 +37,9 @@ body {
     width: auto;
 }
 
+.lil {
+    padding: 25px;
+}
 .header {    
     display: flex;
     flex-direction: column;

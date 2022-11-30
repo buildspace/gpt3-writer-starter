@@ -78,6 +78,7 @@ const callGenerateEndpoint = async () => {
   <div className="output">
     <div className="output-header-container">
       <div className="output-header">
+      <div className="lil" />
       <Image className='small' src={BuildspaceLogo} alt="buildspace logo" />
         <h2></h2>
         <h3>Poem by Rumi</h3>
