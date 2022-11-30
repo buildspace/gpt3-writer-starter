@@ -93,12 +93,11 @@ body {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: 150px;
     overflow: hidden;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     position: relative;
-    width: 610px;
-    max-width: 1200px;
+    width: 510px;
+    max-width: 600px;
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -212,7 +211,7 @@ textarea {
     bottom: 20px;
     flex: 0 0 auto;
     height: auto;
-    left: 20px;
+    margin: auto;
     position: fixed;
     width: auto;
     z-index: 1;
