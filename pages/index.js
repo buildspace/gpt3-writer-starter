@@ -85,6 +85,7 @@ const callGenerateEndpoint = async () => {
     </div>
     <div className="output-content">
       <p>{apiOutput}</p>
+        <div className='gg'/>
     </div>
     
   </div>
