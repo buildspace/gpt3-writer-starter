@@ -6,7 +6,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = "write a poem in the style Rumi about ";
+const basePromptPrefix = "write a poem in the style of Rumi with each line having 10-11 syllables and a rhythm every 6 syllables about ";
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);

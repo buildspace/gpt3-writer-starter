@@ -107,7 +107,7 @@ const callGenerateEndpoint = async () => {
     </div>
 </div>
     
-  );
+  );x
 };
 
 export default Home;
