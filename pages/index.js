@@ -40,10 +40,12 @@ const callGenerateEndpoint = async () => {
         <title>Rumi Writer</title>
       </Head>
       <div className="container">
-        <div className="header">
-          <div className="header-title">
+      <div className="gg">
+      
+          <div className="header">
+            <div className="header-title">
             <h1>Rumi Writer</h1>
-          </div>
+            </div>
           <div className="header-subtitle">
             <h2>
               <Typewriter 
@@ -58,6 +60,7 @@ const callGenerateEndpoint = async () => {
             </h2>
           </div>
         </div>
+      </div>
     <div className="prompt-container">
         <textarea placeholder="what you want the poem to be about(ex.a cat on the moon)" className="prompt-box" value={userInput} onChange={onUserChangedText} />
         <div className="prompt-buttons">

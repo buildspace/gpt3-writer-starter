@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Manrope', sans-serif;
+    overflow-x: hidden;
 }
 
 .root {
@@ -18,21 +19,22 @@ body {
     padding: 0px;
     position: relative;
 }
-
+.gg {
+    padding: 50px;
+}
 .container {
     display: flex;
     place-content: center flex-start;
     align-items: center;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 10px;
+    gap: 1px;
     height: fit-content;
+    width: 100%;
     max-width: 975px;
     overflow: auto;
-    padding: 50px;
     position: relative;
     width: auto;
-    gap: 64px;
 }
 
 .header {    
@@ -89,15 +91,15 @@ body {
     align-items: flex-start;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    
+    display: flex;
     flex-flow: column nowrap;
     gap: 10px;
     height: 75px;
     overflow: hidden;
     padding: 20px;
     position: center;
-    width: 400px;
-    max-width: 345px;
+    width: 450px;
+    max-width: 330px;
     will-change: transform;
     overflow: none;
     outline: none;
