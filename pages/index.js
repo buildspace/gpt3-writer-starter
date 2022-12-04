@@ -51,7 +51,7 @@ const Home = () => {
   placeholder="What should I do with my life?"
   value={userInput}
   onChange={onUserChangedText}
-/>;       
+/>
 
 <div className="prompt-buttons">
   <a
