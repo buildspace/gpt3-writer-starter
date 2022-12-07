@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(20, 19, 19);
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -93,7 +93,7 @@ body {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: 150px;
+    height: 120px;
     overflow: hidden;
     padding: 20px;
     position: relative;
@@ -172,7 +172,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: rgb(115, 109, 107);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
