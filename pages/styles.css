@@ -5,6 +5,9 @@ body {
     padding: 0;
     font-family: 'Manrope', sans-serif;
 }
+h1,h2,h3{
+    color: teal;
+}
 
 .root {
     display: flex;
@@ -172,7 +175,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color:teal;
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -234,7 +237,7 @@ textarea {
     font-weight: 700;
     letter-spacing: -0.5px;
     line-height: 1em;
-    color: #fff;
+    color: teal;
     padding: 12px;
     text-decoration: none;
 }
@@ -242,6 +245,7 @@ textarea {
 .badge {
     display: flex;
     align-items: center;
+ 
 }
 
 .badge img {
@@ -257,6 +261,7 @@ textarea {
 }
 
 .badge p {
+    color: aquamarine;
     margin: 0;
 }
 
