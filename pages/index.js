@@ -71,6 +71,8 @@ export default function Home() {
   return (
     <div className="bg-white">
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <title>Instagram Caption Generator</title>
       </Head>
       <main>
