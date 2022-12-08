@@ -100,6 +100,11 @@ export default function Home() {
                     Instagram Caption Generator
                   </h1>
                   <p className="mt-6 text-xl text-gray-500">
+                    Transform your Instagram posts with our AI-powered caption
+                    generator. Get more engagement and drive more traffic to
+                    your profile with captions that resonate with your audience.
+                  </p>
+                  <p className="mt-6 text-xl text-gray-500">
                     Give me 5 instagram captions inspired by _______________.
                   </p>
                 </div>
@@ -178,7 +183,7 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <div className="relative -mr-40 pl-4 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
+            <div className="relative pl-4 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
               {apiOutput ? (
                 <div className="output">
                   <div className="output-header-container">
@@ -203,11 +208,28 @@ export default function Home() {
                       delay: 3500,
                     }}
                     loop={true}
+                    breakpoints={{
+                      // when window width is >= 320px
+                      320: {
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                      },
+                      // when window width is >= 480px
+                      480: {
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                      },
+                      // when window width is >= 640px
+                      640: {
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                      },
+                    }}
                   >
                     {carouselImages.map((item) => (
                       <SwiperSlide className="">
                         <img
-                          className="h-96"
+                          className="h-[30rem]"
                           src={`https://source.unsplash.com/${item.href}/1920x2614`}
                         />
                       </SwiperSlide>
