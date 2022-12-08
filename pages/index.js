@@ -46,7 +46,8 @@ const callGenerateEndpoint = async () => {
             value={userInput}
             onChange={onUserChangedText}
           />
-  
+   <h3>If you found this useful, please consider sending a small donation of Ethereum to xxisp.eth so i can keep it up and running :-)</h3>
+
   <div className="prompt-buttons">
   <a
     className={isGenerating ? 'generate-button loading' : 'generate-button'}
@@ -73,13 +74,13 @@ const callGenerateEndpoint = async () => {
 )}
       <div className="badge-container grow">
         <a
-          href="https://buildspace.so/builds/ai-writer"
+          href="https://twitter.com/XXispeth"
           target="_blank"
           rel="noreferrer"
         >
           
           <div className="badge">
-            <p>buillt by XXisp.eth</p>
+            <p>buillt by @XXispeth</p>
           </div>
         </a>
       </div>
