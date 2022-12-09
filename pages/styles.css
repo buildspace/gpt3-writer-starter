@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: #DB7F8E;
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -29,7 +29,7 @@ body {
     height: fit-content;
     max-width: 975px;
     overflow: auto;
-    padding: 50px;
+    padding: 24px;
     position: relative;
     width: auto;
     gap: 64px;
@@ -51,19 +51,21 @@ body {
 .header-title h1 {
     width: 100%;
     font-weight: 700;
-    font-size: 72px;
+    font-size: 80px;
     letter-spacing: -4px;
     line-height: 1.2em;
     text-align: center;
     margin: 0;
+    font-family: 'Cooper Black';
 }
 
 .header-subtitle h2 {
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
     color: rgba(255, 255, 255, 0.75);
+    font-family: 'Cooper Black';
 }
 
 .prompt-container {
@@ -72,7 +74,6 @@ body {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 16px;
     height: min-content;
     padding: 0px;
     width: min-content;
@@ -92,7 +93,7 @@ body {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 10px;
+    gap: 5px;
     height: 150px;
     overflow: hidden;
     padding: 20px;
@@ -117,6 +118,10 @@ textarea {
     font-family: 'Manrope', sans-serif;
 }
 
+textarea::placeholder {
+    color: rgba(102, 102, 102, 0.7);
+}
+
 
 .prompt-box:focus {
     border-color:rgba(255, 255, 255, 0.75)
@@ -136,6 +141,7 @@ textarea {
     padding: 0px;
     position: relative;
     width: 100%;
+    margin-top: 12px;
 }
 
 .key-stroke {
@@ -172,7 +178,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: #AA4465;
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;

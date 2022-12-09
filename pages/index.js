@@ -43,7 +43,8 @@ const Home = () => {
             <h2>let us help you love your partner</h2>
           </div>
           <div className="prompt-container">
-            <textarea placeholder='start typing here' className="prompt-box" value={userInput} onChange={onUserChangedText}/>
+            <p className="prompt-label">Write me a love letter to my...</p>
+            <textarea placeholder='...wife about when we first met at a bar.' className="prompt-box" value={userInput} onChange={onUserChangedText}/>
           </div>
           <div className='prompt-buttons'>
             <a className={isGenerating ? 'generate-button loading' : 'generate-button'} onClick={callGenerateEndpoint}>
