@@ -51,7 +51,7 @@ body {
 .header-title h1 {
     width: 100%;
     font-weight: 700;
-    font-size: 80px;
+    font-size: 96px;
     letter-spacing: -4px;
     line-height: 1.2em;
     text-align: center;
@@ -60,7 +60,7 @@ body {
 }
 
 .header-subtitle h2 {
-    font-size: 24px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
@@ -96,9 +96,9 @@ body {
     gap: 5px;
     height: 150px;
     overflow: hidden;
-    padding: 20px;
+    padding: 30px;
     position: relative;
-    width: 610px;
+    width: 720px;
     max-width: 1200px;
     will-change: transform;
     overflow: auto;
