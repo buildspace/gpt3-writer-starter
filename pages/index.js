@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>AI Love Letters</title>
       </Head>
       <div className="container">
         <div className="header">
