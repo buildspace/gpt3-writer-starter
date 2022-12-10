@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Space Mono', monospace;
 }
 
 .root {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(20, 19, 19);
+    background-color: #d6d0b8;
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -40,7 +41,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: #837d7d;
 }
 
 .header-title {
@@ -63,7 +64,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
-    color: rgba(255, 255, 255, 0.75);
+    color: #aaa6a4;
 }
 
 .prompt-container {
@@ -80,14 +81,14 @@ body {
 
 .prompt-box {
     border-bottom-width: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: #f1f4c6;
     border-left-width: 1px;
     border-right-width: 1px;
     border-style: solid;
     border-top-width: 1px;
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: #aaa6a4;
     border-radius: 16px;
     display: flex;
     flex: 0 0 auto;
@@ -108,18 +109,18 @@ body {
     letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75); /* not sure which element does this hit */
     text-decoration: none;
     text-transform: none;
 }
 
 textarea {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Space Mono', monospace;
 }
 
 
 .prompt-box:focus {
-    border-color:rgba(255, 255, 255, 0.75)
+    border-color:rgba(255, 255, 255, 0.75); /* not sure which element this rule hit */
 }
 
 
@@ -166,19 +167,19 @@ textarea {
 }
 
 .or p {
-    color: rgba(255, 255, 255, 0.25)
+    color: rgba(255, 255, 255, 0.25);
 }
 
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
     background-color: rgb(115, 109, 107);
-    border-radius: 100px;
+    border-radius: 25px;
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: min-content;
+    height: 20px;
     overflow: hidden;
     padding: 16px 24px;
     position: relative;
@@ -198,7 +199,7 @@ textarea {
 }
 
 .generate p {
-    color: rgb(255, 255, 255);
+    color: #d6d0b8;
     margin: 0;
 }
 
@@ -297,14 +298,14 @@ textarea {
 }
 
 .output-header h3 {
-    font-family: "Manrope", serif;
+    font-family: 'Space Mono', monospace;
     font-size: 28px;
     font-style: normal;
     font-weight: 800;
     letter-spacing: 0px;
     line-height: 1.4em;
     text-align: start;
-    color: #ffffff;
+    color: #837d7d;
     text-decoration: none;
     text-transform: none;
     margin: 0;
@@ -323,7 +324,7 @@ textarea {
 .output-content p {
     text-align: center;
     white-space: pre-line;
-    color: rgba(255, 255, 255, 0.5);
+    color: #837d7d;
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
@@ -413,3 +414,13 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+#resetButton {
+    background-color: rgb(115, 109, 107);
+    padding: 10px;
+    border: none;
+    color: #d6d0b8;
+    border-radius: 25px;
+    will-change: transform;
+    cursor: pointer;
+  }
