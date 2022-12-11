@@ -61,6 +61,14 @@ body {
 .header-subtitle h2 {
     font-size: 20px;
     font-style: normal;
+    font-weight: 700;
+    line-height: 1.4em;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.user-instructions h3 {
+    font-size: 16px;
+    font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
     color: rgba(255, 255, 255, 0.75);
