@@ -86,21 +86,12 @@ const Home = () => {
       </div>
       <div className="badge-container grow">
         <a
-          href="https://buildspace.so/builds/ai-writer"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {/* badge */}
-        </a>
-      </div>
-      <div className="badge-container grow">
-        <a
           href="https://twitter.com/cryptoverseOG"
           target="_blank"
           rel="noreferrer"
         >
           <div className="badge">
-            <Image src={twitterLogo} alt="buildspace logo" />
+            <Image src={twitterLogo} alt="twitter logo" />
             <p>Check us out on twitter</p>
           </div>
         </a>
