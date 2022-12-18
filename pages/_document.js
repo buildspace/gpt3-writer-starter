@@ -5,10 +5,10 @@ export default function Document() {
     <Html>
       <Head>
         <meta property="og:title" content="A.I. Lesson Planner" key="title"/>
-        <meta property="og:description" content="A GiantKelp Prototype" key="description"/>
+        <meta property="og:description" content="build with buildspace" key="description"/>
         <meta
           property="og:image"
-          content="https://www.giantkelp.com/content/images/size/w1200/2022/09/DALL-E-2022-09-12-21.44.53---triangles--circles-and-lines-.png"
+          content="https://cdn.buildspace.so/courses/gpt3-writer/project-og.jpg"
         />
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
