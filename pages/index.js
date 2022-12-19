@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import FeedbackAlert from "../components/feedbackAlert";
 
 const footerNavigation = {
   main: [],
@@ -40,6 +41,7 @@ const carouselImages = [
 
 export default function Home() {
   const [userInput, setUserInput] = useState("");
+  const [successfulFeedback, setSuccessfulFeedback] = useState(false);
 
   const onUserChangedText = (event) => {
     console.log(event.target.value);
@@ -70,11 +72,20 @@ export default function Home() {
   };
 
   const positiveFeedback = async (prompt, result) => {
-    console.log("Positive feedback given");
-    console.log({
+    console.log("Thank you for your feedback");
+    const formattedData = {
       prompt: `Give me a one of a kind Instagram caption inspired by ${prompt}`,
       completion: result,
+    };
+    const response = await fetch("/api/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formattedData),
     });
+    callGenerateEndpoint();
+    setSuccessfulFeedback(true);
   };
   return (
     <div className="bg-white">
@@ -238,6 +249,11 @@ export default function Home() {
                       <span className="text-5xl">🔥</span>
                     </button>
                   </span>
+                  {/* {successfulFeedback && (
+                    <div className="mt-10 w-[350px] mx-auto">
+                      <FeedbackAlert />
+                    </div>
+                  )} */}
                 </div>
               ) : (
                 <div className="">
