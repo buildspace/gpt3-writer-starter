@@ -10,7 +10,8 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background: url("https://i.ibb.co/hCGw889/Screen-Shot-2022-09-20-at-22-22-40.png");
+    background-size: cover;
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -40,7 +41,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: #FFF;
 }
 
 .header-title {
@@ -56,6 +57,7 @@ body {
     line-height: 1.2em;
     text-align: center;
     margin: 0;
+    background-color: rgba(188,152,126,0.85);
 }
 
 .header-subtitle h2 {
@@ -63,7 +65,8 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(188,152,126,0.85);
 }
 
 .prompt-container {
@@ -108,13 +111,15 @@ body {
     letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
     text-transform: none;
+    background-color: rgba(188,152,126,0.85);
 }
 
 textarea {
     font-family: 'Manrope', sans-serif;
+    background-color: rgba(188,152,126,0.85);
 }
 
 
@@ -172,7 +177,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: rgb(77, 176, 74);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -323,7 +328,8 @@ textarea {
 .output-content p {
     text-align: center;
     white-space: pre-line;
-    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(188,152,126,0.85);
+    color: rgba(255, 255, 255, 1);
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
