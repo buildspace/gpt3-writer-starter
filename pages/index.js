@@ -68,6 +68,14 @@ export default function Home() {
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
   };
+
+  const positiveFeedback = async (prompt, result) => {
+    console.log("Positive feedback given");
+    console.log({
+      prompt: `Give me a one of a kind Instagram caption inspired by ${prompt}`,
+      completion: result,
+    });
+  };
   return (
     <div className="bg-white">
       <Head>
@@ -80,7 +88,7 @@ export default function Home() {
         <div className="overflow-hidden pt-8 sm:pt-12 lg:relative lg:py-48">
           <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:px-8">
             <div>
-              <div className="mt-20">
+              <div className="mt-20 text-center sm:text-left">
                 <div>
                   <div className="inline-flex space-x-4">
                     {/* <span className="rounded bg-rose-50 px-2.5 py-1 text-sm font-semibold text-rose-500">
@@ -96,7 +104,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-6 sm:max-w-xl">
-                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl text-center">
                     Instagram Caption Generator
                   </h1>
                   <p className="mt-6 text-xl text-gray-500">
@@ -105,7 +113,7 @@ export default function Home() {
                     your profile with captions that resonate with your audience.
                   </p>
                   <p className="mt-6 text-xl text-gray-500">
-                    Give me 5 instagram captions inspired by _______________.
+                    Give me a Instagram caption inspired by _______________.
                   </p>
                 </div>
                 <form
@@ -185,17 +193,51 @@ export default function Home() {
             </div>
             <div className="relative pl-4 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
               {apiOutput ? (
-                <div className="output">
-                  <div className="output-header-container">
+                <div className="output text-center">
+                  <div className="output-header-container sm:mt-64">
                     <div className="output-header">
-                      <h3 className="text-lg font-medium leading-6 text-gray-900">
+                      <h3 className="text-2xl font-medium leading-6 text-gray-900">
                         Output
                       </h3>
                     </div>
                   </div>
-                  <div className="output-content w-[350px]">
-                    <p className="w-[350px]">{apiOutput}</p>
+                  <div className="output-content w-[350px] mx-auto">
+                    <p className="w-[350px] text-lg mt-5">{apiOutput}</p>
+                    {/* {console.log("Logged Output: ", apiOutput)} */}
                   </div>
+                  {/* AI Feedback Loop */}
+                  <span className="isolate inline-flex rounded-md shadow-sm mt-5">
+                    <button
+                      type="button"
+                      onClick={callGenerateEndpoint}
+                      className="relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                    >
+                      <span className="sr-only">Negative</span>
+                      {/* <HandThumbDownIcon
+                        className="h-5 w-5"
+                        aria-hidden="true"
+                      /> */}
+                      <span className="text-5xl">💩</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={callGenerateEndpoint}
+                      className="relative -ml-px inline-flex items-center  border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                    >
+                      <span className="sr-only">Neutral</span>
+                      {/* <HandThumbUpIcon className="h-5 w-5" aria-hidden="true" /> */}
+                      <span className="text-5xl">😐</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => positiveFeedback(userInput, apiOutput)}
+                      className="relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                    >
+                      <span className="sr-only">Positive</span>
+                      {/* <HandThumbUpIcon className="h-5 w-5" aria-hidden="true" /> */}
+                      <span className="text-5xl">🔥</span>
+                    </button>
+                  </span>
                 </div>
               ) : (
                 <div className="">

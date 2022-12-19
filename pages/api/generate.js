@@ -7,7 +7,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix =
-  "Give me 5 unique instagram captions thats inspired by ";
+  "Give me a one of a kind Instagram caption inspired by ";
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
@@ -15,7 +15,7 @@ const generateAction = async (req, res) => {
   const baseCompletion = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: `${basePromptPrefix}${req.body.userInput} lyrics`,
-    temperature: 0.7,
+    temperature: 0.95,
     max_tokens: 100,
   });
 

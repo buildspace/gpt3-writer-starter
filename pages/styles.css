@@ -6,3 +6,7 @@
 html {
     width: 100%;
 }
+
+.outputContainer {
+    text-align: -webkit-center;
+}
