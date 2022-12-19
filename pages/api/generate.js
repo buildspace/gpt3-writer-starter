@@ -1,16 +1,13 @@
 import { Configuration, OpenAIApi } from "openai";
-const configuration = new Configuration ({
-    apiKey: process.env.OpenAI_API_KEY,
+const configuration = new Configuration({
+  apiKey: process.env.OpenAI_API_KEY,
 });
-
-//console.log(process.env.OpenAI_API_KEY);
-
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix = "";
 const generateAction = async (req, res) => {
   // Run first prompt
-  console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
-  
+  console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
+
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: `${basePromptPrefix}${req.body.userInput}`,
