@@ -44,7 +44,7 @@ export default function Home() {
   const [successfulFeedback, setSuccessfulFeedback] = useState(false);
 
   const onUserChangedText = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setUserInput(event.target.value);
   };
 
@@ -85,7 +85,7 @@ export default function Home() {
       body: JSON.stringify(formattedData),
     });
     callGenerateEndpoint();
-    setSuccessfulFeedback(true);
+    // setSuccessfulFeedback(true);
   };
   return (
     <div className="bg-white">
@@ -139,7 +139,6 @@ export default function Home() {
                       value={userInput}
                       placeholder="Drake. Gandhi. Barack Obama. Elon Musk."
                       className="prompt-box block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm bg-slate-200 text-indigo-600 "
-                      defaultValue={""}
                       onChange={onUserChangedText}
                     />
                   </div>
@@ -147,7 +146,7 @@ export default function Home() {
                     <div className="prompt-buttons">
                       <div className="generate">
                         {isGenerating ? (
-                          <span class="loader"></span>
+                          <span className="loader"></span>
                         ) : (
                           <button
                             onClick={callGenerateEndpoint}
@@ -285,9 +284,10 @@ export default function Home() {
                     }}
                   >
                     {carouselImages.map((item) => (
-                      <SwiperSlide className="">
+                      <SwiperSlide className="" key={item.href}>
                         <img
                           className="h-[30rem]"
+                          key={item.href}
                           src={`https://source.unsplash.com/${item.href}/1920x2614`}
                         />
                       </SwiperSlide>
