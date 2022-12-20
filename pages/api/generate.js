@@ -5,6 +5,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix = "";
 const generateAction = async (req, res) => {
+  //logging errors
+  try {
+
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
 
@@ -18,6 +21,9 @@ const generateAction = async (req, res) => {
   const basePromptOutput = baseCompletion.data.choices.pop();
 
   res.status(200).json({ output: basePromptOutput });
+} catch (error) {
+  res.status(500).json({ error: error.message });
+  }
 };
 
 export default generateAction;

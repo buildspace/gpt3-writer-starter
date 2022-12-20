@@ -18,5 +18,18 @@
     "openai": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "description": "This is the starter template for the [build your own AI writing assistant w/ GPT-3](https://buildspace.so/builds/ai-writer) project.",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashesashes/gpt3-writer-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashesashes/gpt3-writer-starter/issues"
+  },
+  "homepage": "https://github.com/ashesashes/gpt3-writer-starter#readme"
 }
