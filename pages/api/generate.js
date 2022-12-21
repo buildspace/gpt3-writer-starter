@@ -22,15 +22,18 @@ const generateAction = async (req, res) => {
     temperature: 0.8,
     max_tokens: 250,
   });
-  
-  console.log(baseCompletion);
-  console.dir(baseCompletion); 
 
+  // Store the title in a separate variable
+  const title = req.body.userInput; 
+
+  // Store the output of the first prompt in a separate variable 
   const basePromptOutput = baseCompletion.data.choices.pop();
+
   res.status(200).json({ output: basePromptOutput });
 } catch (error) {
   res.status(500).json({ error: error.message });
   }
+  
 //I build Prompt #2 
 const secondPrompt = 
 `

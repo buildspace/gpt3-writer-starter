@@ -38,17 +38,17 @@ const callGenerateEndpoint = async () => {
       <div className='container'>
         <div className='header'>
           <div className='header-title'>
-            <h1>Talk to Albus Dumbledore</h1>
+            <h1>Create your own Harry Potter Fanfic Story</h1>
           </div>
           <div className='header-subtitle'>
-            <h2>Have Dumbledore explain stuff to you (ex: what is crypto)
+            <h2> To get started, tell us who the story is about and a line or 2 about them. Let the AI do the rest.  
             </h2>
           </div>
         </div>
         {/* Add this code here */}
         <div className="prompt-container">
           <textarea 
-          placeholder="ask Dumbledore a question here" 
+          placeholder="Mundungus Mandragora had a secret. He was addicted to Muggle comic books." 
           className='prompt-box'
           value={userInput}
           onChange={onUserChangedText}
