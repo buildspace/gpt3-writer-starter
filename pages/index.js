@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
+import Link from 'next/link'
 
 const Home = () => {
   const [userInput, setUserInput] = useState('')
@@ -23,7 +24,6 @@ const Home = () => {
 
   const data = await response.json()
   const { output } = data
-  console.log('OpenAI replies...', output.text)
 
   setApiOutput(`${output.text}`)
   setIsGenerating(false)
@@ -36,6 +36,9 @@ const Home = () => {
       </Head>
       <div className="container">
         <div className="header">
+        <Link href={'./store/'}>
+              Go to store
+          </Link>
           <div className="header-title">
             <h1>Generate the perfect love letter</h1>
           </div>
