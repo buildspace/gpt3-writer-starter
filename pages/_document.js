@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta property="og:title" content="GPT-3 Writer" key="title"/>
+        <meta property="og:title" content="SumItUp" key="title"/>
         <meta property="og:description" content="build with buildspace" key="description"/>
         <meta
           property="og:image"
