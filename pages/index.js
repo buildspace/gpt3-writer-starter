@@ -45,7 +45,7 @@ const Home = () => {
             <h1>Generate a Cover Letter</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Write a few bullets on the job you are applying for, your previous work experience and education, and soft skills. </h2>
+            <h2>Write a few bullets on the job you are applying for, your previous work experience, and soft skills. Write on a new line for each of those topics.</h2>
           </div>
         </div>
         <div className="prompt-container">
