@@ -69,7 +69,7 @@ const Home = () => {
       
       {/* setting the value of the textarea to the user input. 
       Which means whatever is in the userInput var, 
-      we are going to show in the textarea */}
+      we are going to show in the textarea damn */}
       <div className="prompt-container">
         <textarea
           placeholder="ex: I want to lose 10 pounds"
