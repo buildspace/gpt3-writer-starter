@@ -7,9 +7,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix = `
-Write me an awesome plot for a fanfiction set in the 
-Harry Potter Universe with original character names with the prompt below.
-Prompt:
+Write me a detailed table of contents for a blog post with the title below.
+Title:
 `;
 
 const generateAction = async (req, res) => {
@@ -26,11 +25,10 @@ const generateAction = async (req, res) => {
 
 	// I build Prompt #2.
 	const secondPrompt = `
- Take the plot and prompt below and generate a title and a magical fanfiction story written in the style of JK Rowling. Make it feel awesome. Set it at a 4th grade reading level. End with a plot point or cliffhanger. 
- Prompt: ${req.body.userInput}
- Plot: ${basePromptOutput.text}
- Title:
- Story:
+ Take the table of contents and title of the blog post below and generate a blog post written in thwe style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+ Title: ${req.body.userInput}
+ Table of Contents: ${basePromptOutput.text}
+ Blog Post:
  `;
 
 	// I call the OpenAI API a second time with Prompt #2
@@ -40,7 +38,7 @@ const generateAction = async (req, res) => {
 		// I set a higher temperature for this one. Up to you!
 		temperature: 0.85,
 		// I also increase max_tokens.
-		max_tokens: 500,
+		max_tokens: 1250,
 	});
 
 	// Get the output
