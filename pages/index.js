@@ -42,7 +42,7 @@ const callGenerateEndpoint = async () => {
           </div>
         </div>
         <div className="prompt-container">
-        <textarea className="prompt-box" placeholder="start typing here" value={userInput} onChange={onUserChangedText}
+        <textarea className="prompt-box" placeholder="What is the MFI indicator?" value={userInput} onChange={onUserChangedText}
         />;
         <div className="prompt-buttons"> 
         <a
