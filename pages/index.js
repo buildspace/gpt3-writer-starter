@@ -3,6 +3,8 @@ import Image from "next/image";
 import buildspaceLogo from "../assets/buildspace-logo.png";
 import { useState, useEffect } from "react";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import UploadWidget from "../components/UploadWidget";
+import Script from "next/script";
 
 // core version + navigation, pagination modules:
 import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
@@ -91,6 +93,11 @@ export default function Home() {
     <div className="bg-white">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* <Script src="https://upload-widget.cloudinary.com/global/all.js" /> */}
+        <script
+          src="https://upload-widget.cloudinary.com/global/all.js"
+          type="text/javascript"
+        ></script>
 
         <title>Instagram Caption Generator</title>
       </Head>
@@ -127,6 +134,7 @@ export default function Home() {
                     Give me a Instagram caption inspired by _______________.
                   </p>
                 </div>
+                <UploadWidget />
                 <form
                   action="#"
                   className="mt-12 sm:flex sm:w-full sm:max-w-lg"
