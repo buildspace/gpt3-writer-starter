@@ -1,0 +1,7 @@
+body {
+    min-width: 250px;
+}
+
+#key_entered {
+    display: none;
+}

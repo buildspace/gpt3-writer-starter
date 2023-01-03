@@ -35,14 +35,14 @@ const callGenerateEndpoint = async () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Learn About Technical Indicators</h1>
+            <h1>Facial Texpressions</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Got a question about a technical indicator? Ask away! (ex. How do I use the RSI to trade?)</h2>
+            <h2>Convert Facial expressions or emoji's to text art. Mention the expression you want to portray in text. (ex. smiley face)</h2>
           </div>
         </div>
         <div className="prompt-container">
-        <textarea className="prompt-box" placeholder="What is the MFI indicator?" value={userInput} onChange={onUserChangedText}
+        <textarea className="prompt-box" placeholder="thumbs up" value={userInput} onChange={onUserChangedText}
         />;
         <div className="prompt-buttons"> 
         <a
