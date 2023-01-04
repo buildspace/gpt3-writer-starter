@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
-
+const smileyFace = "{{=^__^=}}";
 const Home = () => {
   const [userInput, setUserInput] = useState('');
   const [apiOutput, setApiOutput] = useState('')
@@ -42,7 +42,7 @@ const callGenerateEndpoint = async () => {
           </div>
         </div>
         <div className="prompt-container">
-        <textarea className="prompt-box" placeholder="thumbs up" value={userInput} onChange={onUserChangedText}
+        <textarea className="prompt-box" placeholder="goofy face" value={userInput} onChange={onUserChangedText}
         />;
         <div className="prompt-buttons"> 
         <a
@@ -50,7 +50,7 @@ const callGenerateEndpoint = async () => {
     onClick={callGenerateEndpoint}
   >
           <div className="generate">
-          {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
+          {isGenerating ? <span className="loader"></span> : <p>Generate {smileyFace}</p>}
             </div>
             </a>
             </div>
