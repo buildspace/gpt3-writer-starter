@@ -15,6 +15,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import FeedbackAlert from "../components/feedbackAlert";
 
+import logoImage from "../assets/captionlyLogo.png";
+
 const footerNavigation = {
   main: [],
   social: [
@@ -56,7 +58,6 @@ export default function Home() {
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
 
-    console.log("Calling OpenAI...");
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -67,11 +68,12 @@ export default function Home() {
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text);
 
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
   };
+
+  // const logoImage = "../assets/captionlyLogo.png";
 
   const positiveFeedback = async (prompt, result) => {
     console.log("Thank you for your feedback");
@@ -106,14 +108,25 @@ export default function Home() {
         <div className="overflow-hidden pt-8 sm:pt-12 lg:relative lg:py-48">
           <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:px-8">
             <div>
-              <div className="mt-20 text-center sm:text-left">
+              <div>
+                <Image
+                  src={logoImage}
+                  width="200"
+                  height="auto"
+                  alt="Captionly"
+                />
+                {/* <img className="h-11 w-auto" src={logoImage} alt="Captionly " /> */}
+              </div>
+              <div className="mt-10 text-center sm:text-left">
                 <div>
                   <div className="inline-flex space-x-4">
                     {/* <span className="rounded bg-rose-50 px-2.5 py-1 text-sm font-semibold text-rose-500">
                       What's new
                     </span> */}
                     <span className="inline-flex items-center space-x-1 text-sm font-medium text-indigo-600">
-                      <span>Version 0.1.0</span>
+                      <a href="https://github.com/keishon104/gpt3-writer-starter/commits/main">
+                        Version 0.2.0
+                      </a>
                       <ChevronRightIcon
                         className="h-5 w-5"
                         aria-hidden="true"
@@ -134,7 +147,7 @@ export default function Home() {
                     Give me a Instagram caption inspired by _______________.
                   </p>
                 </div>
-                <UploadWidget />
+                {/* <UploadWidget /> */}
                 <form
                   action="#"
                   className="mt-12 sm:flex sm:w-full sm:max-w-lg"
@@ -152,9 +165,16 @@ export default function Home() {
                   </div>
                   <div className="mt-4 sm:mt-0 sm:ml-3">
                     <div className="prompt-buttons">
-                      <div className="generate">
+                      <div className="flex-1">
                         {isGenerating ? (
-                          <span className="loader"></span>
+                          <span className="bg-indigo-500 animate-spin">
+                            <svg
+                              class="animate-spin h-5 w-5 mr-3 ..."
+                              viewBox="0 0 24 24"
+                            >
+                              Test
+                            </svg>
+                          </span>
                         ) : (
                           <button
                             onClick={callGenerateEndpoint}
@@ -347,14 +367,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              <div className="badge flex justify-center">
-                <Image
-                  src={buildspaceLogo}
-                  alt="w-[20px]"
-                  className="w-[30px] mx-5"
-                />
-                <p>build with buildspace</p>
-              </div>
+              <div className="badge flex justify-center"></div>
             </a>
           </div>
         </div>

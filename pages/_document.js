@@ -11,7 +11,7 @@ export default function Document() {
         />
         <meta
           property="og:description"
-          content="Instagram Caption Generator built with buildspace"
+          content="Instagram Caption Generator"
           key="description"
         />
         <meta
