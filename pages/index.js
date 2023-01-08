@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import UploadWidget from "../components/UploadWidget";
 import Script from "next/script";
+import Tabs from "../components/Tabs";
 
 // core version + navigation, pagination modules:
 import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper";
@@ -100,6 +101,7 @@ export default function Home() {
           src="https://upload-widget.cloudinary.com/global/all.js"
           type="text/javascript"
         ></script>
+        <link rel="shortcut icon" href="/faviconC.ico" />
 
         <title>Instagram Caption Generator</title>
       </Head>
@@ -148,6 +150,7 @@ export default function Home() {
                   </p>
                 </div>
                 {/* <UploadWidget /> */}
+                {/* <Tabs /> */}
                 <form
                   action="#"
                   className="mt-12 sm:flex sm:w-full sm:max-w-lg"
@@ -169,7 +172,7 @@ export default function Home() {
                         {isGenerating ? (
                           <span className="bg-indigo-500 animate-spin">
                             <svg
-                              class="animate-spin h-5 w-5 mr-3 ..."
+                              className="animate-spin h-5 w-5 mr-3 ..."
                               viewBox="0 0 24 24"
                             >
                               Test
