@@ -74,8 +74,6 @@ export default function Home() {
     setIsGenerating(false);
   };
 
-  // const logoImage = "../assets/captionlyLogo.png";
-
   const positiveFeedback = async (prompt, result) => {
     console.log("Thank you for your feedback");
     const formattedData = {
@@ -90,7 +88,6 @@ export default function Home() {
       body: JSON.stringify(formattedData),
     });
     callGenerateEndpoint();
-    // setSuccessfulFeedback(true);
   };
   return (
     <div className="bg-white">
