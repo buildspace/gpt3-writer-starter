@@ -4,6 +4,9 @@ const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+const express = require('express');
+const router = express.Router();
+
 const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix1 = 
@@ -60,5 +63,8 @@ const generateAction = async (req, res) => {
 
   res.status(200).json({ output: basePromptOutput });
 };
+
+router.post('/generateAction', generateAction);
+module.exports = router;
 
 export default generateAction;
