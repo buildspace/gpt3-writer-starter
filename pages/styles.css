@@ -93,7 +93,7 @@ body {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: 150px;
+    height: 75px;
     overflow: hidden;
     padding: 20px;
     position: relative;
@@ -232,7 +232,7 @@ textarea {
     transform-origin: 50% 50% 0px;
     font-size: 14px;
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: 0px;
     line-height: 1em;
     color: #fff;
     padding: 12px;
@@ -321,7 +321,7 @@ textarea {
 }
 
 .output-content p {
-    text-align: center;
+    text-align: left;
     white-space: pre-line;
     color: rgba(255, 255, 255, 0.5);
 }

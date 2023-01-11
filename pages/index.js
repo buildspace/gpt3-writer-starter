@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import buildspaceLogo from '../assets/buildspace-logo.png';
+import LinkedIn from '../assets/LinkedIn.png';
 import { useState } from 'react';
 
 
@@ -52,36 +52,36 @@ const Home = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ 
-        userInput1 ,
-        userInput2 ,
-        userInput4 ,
-        userInput5 ,
-        userInput6 ,
-        userInput7 ,
-        userInput8 ,
-        userInput9 ,
-        userInput10 ,
-        userInput11 ,
-        userInput12 ,
-        userInput13 ,
-        userInput14 ,
-        userInput15 ,
-        userInput16 ,
-        userInput17 ,
-        userInput18 ,
-        userInput19 ,
-        userInput20 ,
-        userInput21 ,
-        userInput22 ,
-        userInput23 ,
-        userInput24 ,
-        userInput25 ,
-        userInput26 ,
-        userInput27 ,
-        userInput28 ,
-        userInput29 ,
-        userInput30 ,
-        userInput31
+        userInput1: userInput1,
+        userInput2: userInput2,
+        userInput4: userInput4,
+        userInput5: userInput5,
+        userInput6: userInput6,
+        userInput7: userInput7,
+        userInput8: userInput8,
+        userInput9: userInput9,
+        userInput10: userInput10,
+        userInput11: userInput11,
+        userInput12: userInput12,
+        userInput13: userInput13,
+        userInput14: userInput14,
+        userInput15: userInput15,
+        userInput16: userInput16,
+        userInput17: userInput17,
+        userInput18: userInput18,
+        userInput19: userInput19,
+        userInput20: userInput20,
+        userInput21: userInput21,
+        userInput22: userInput22,
+        userInput23: userInput23,
+        userInput24: userInput24,
+        userInput25: userInput25,
+        userInput26: userInput26,
+        userInput27: userInput27,
+        userInput28: userInput28,
+        userInput29: userInput29,
+        userInput30: userInput30,
+        userInput31: userInput31
       }),
     });
 
@@ -224,7 +224,7 @@ const Home = () => {
             <h1>Generador Automático de CV</h1>
           </div>
           <div className="header-subtitle">
-          <h2>Genera tu CV de manera automática con inteligencia artificial</h2>
+          <h2>Genera tu CV de manera automática con inteligencia artificial, llenando tu información y copiando tus resultados</h2>
           </div>
         </div>
         <div className="prompt-container">
@@ -279,10 +279,10 @@ const Home = () => {
           )}
       </div>
       <div className="badge-container grow">
-        <a href="https://buildspace.so/builds/ai-writer" target="_blank" rel="noreferrer"/>
+        <a href="https://www.linkedin.com/in/ricardo-ivan-sandoval/" target="_blank" rel="noreferrer"/>
           <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
+            <Image src={LinkedIn} alt="LinkedIn logo" />
+            <p>Find me in LinkedIn</p>
           </div>
         </div>
       </div>
