@@ -36,6 +36,7 @@ const Home = () => {
   const [userInput29, setUserInput29] = useState('');
   const [userInput30, setUserInput30] = useState('');
   const [userInput31, setUserInput31] = useState('');
+  const [userInput32, setUserInput32] = useState('');
 
   const [apiOutput, setApiOutput] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
@@ -81,7 +82,8 @@ const Home = () => {
         userInput28: userInput28,
         userInput29: userInput29,
         userInput30: userInput30,
-        userInput31: userInput31
+        userInput31: userInput31,
+        userInput32: userInput32
       }),
     });
 
@@ -212,6 +214,9 @@ const Home = () => {
   const onUserChangedText31 = (event) => {
     setUserInput31(event.target.value);
   };
+  const onUserChangedText32 = (event) => {
+    setUserInput32(event.target.value);
+  };
 
   return (
     <div className="root">
@@ -258,6 +263,7 @@ const Home = () => {
           <textarea placeholder="Cursos:" className="prompt-box" value={userInput29} onChange={onUserChangedText29} />
           <textarea placeholder="Otros intereses:" className="prompt-box" value={userInput30} onChange={onUserChangedText30} />
           <textarea placeholder="Descripción del empleo que quiero:" className="prompt-box" value={userInput31} onChange={onUserChangedText31} />
+          <textarea placeholder="En qué idioma quiero mi CV (escribir sólo Inglés, Español, Ruso, etc...):" className="prompt-box" value={userInput32} onChange={onUserChangedText32} />
           <div className="prompt-buttons">
           <a className={isGenerating ? 'generate-button loading' : 'generate-button'} onClick={callGenerateEndpoint}>
             <div className="generate"> 
