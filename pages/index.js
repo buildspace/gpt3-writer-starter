@@ -86,7 +86,7 @@ const Home = () => {
       </div>
       <div className="badge-container grow">
         <a
-          href="https://twitter.com/cryptoverseOG"
+          href="https://twitter.com/"
           target="_blank"
           rel="noreferrer"
         >
