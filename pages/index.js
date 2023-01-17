@@ -2,8 +2,24 @@ import Head from 'next/head';
 import Image from 'next/image';
 import LinkedIn from '../assets/LinkedIn.png';
 import { useState } from 'react';
+import { initializeApp } from "firebase/app";
+//import { getAnalytics } from "firebase/analytics";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
+const firebaseConfig = {
+  apiKey: process.env.APP_API_KEY,
+  authDomain: process.env.APP_AUTH_DOMAIN,
+  projectId: process.env.APP_PROJECT_ID,
+  storageBucket: process.env.APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.APP_MESSAGING_SENDER_ID,
+  appId: process.env.APP_APP_ID,
+  measurementId: process.env.APP_MEASUREMENT_ID
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+//const analytics = getAnalytics(app);
 
 const Home = () => {
   const [userInput1, setUserInput1] = useState('');
@@ -226,10 +242,10 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>WizCV</h1>
+            <h1>Genera tu CV rápido, sólo pega tus datos</h1>
           </div>
           <div className="header-subtitle">
-          <h2>Genera tu CV de manera automática con inteligencia artificial, llenando tu información y copiando tus resultados</h2>
+          <h2>Descarga el CV generado, sólo pega en tu formato favorito y listo.</h2>
           </div>
         </div>
         <div className="prompt-container">

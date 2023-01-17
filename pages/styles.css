@@ -19,6 +19,12 @@ body {
     position: relative;
 }
 
+.img_logo { 
+    width: 200px; 
+    height: 200px; 
+    object-fit: contain;
+}
+
 .container {
     display: flex;
     place-content: center flex-start;
