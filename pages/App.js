@@ -242,7 +242,7 @@ const App = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Genera tu CV rápido, sólo pega tus datos</h1>
+            <h1>Genera tu CV repido, sólo pega tus datos</h1>
           </div>
           <div className="header-subtitle">
           <h2>Descarga el CV generado, sólo pega en tu formato favorito y listo.</h2>
