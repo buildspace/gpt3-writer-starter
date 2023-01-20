@@ -413,3 +413,55 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+/* .output {
+    place-content: center flex-start;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+    gap: 10px;
+    height: min-content;
+    max-width: 1200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.output-header-container {
+    place-content: center;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+    gap: 16px;
+    height: min-content;
+    overflow: hidden;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.output-header h3 {
+    font-family: "Manrope", serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 0px;
+    line-height: 1.4em;
+    text-align: start;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: none;
+    margin: 0;
+}
+
+.output-content {
+    outline: none;
+    display: flex;
+    /* max-width: 25%; */
+    /* flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+/* } */
