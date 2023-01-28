@@ -4,13 +4,12 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>574WARD Marketing Assistant</h1>
+            <h1>Business Assistant</h1>
           </div>
           <div className="header-subtitle">
             <h2>Build The Bend</h2>
           </div>
-        </div>
-        {/textarea/}
+        </div
         <div className="prompt-container">
           <textarea placeholder="start typing here" className="prompt-box" />
         </div>
