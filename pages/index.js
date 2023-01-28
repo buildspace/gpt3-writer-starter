@@ -10,7 +10,7 @@ const Home = () => {
             <h2>Build The Bend</h2>
           </div>
         </div>
-        {/textarea/}
+   
         <div className="prompt-container">
           <textarea placeholder="start typing here" className="prompt-box" />
         </div>
