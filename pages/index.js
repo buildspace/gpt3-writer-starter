@@ -1,3 +1,5 @@
+import React from "react";
+
 const Home = () => {
   return (
     <div className="root">
@@ -10,7 +12,6 @@ const Home = () => {
             <h2>Build The Bend</h2>
           </div>
         </div>
-   
         <div className="prompt-container">
           <textarea placeholder="start typing here" className="prompt-box" />
         </div>
@@ -22,13 +23,4 @@ const Home = () => {
           rel="noreferrer"
         >
           <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  );
-};
-
-export default Home;
+            <img src={buildspaceLogo} alt="
