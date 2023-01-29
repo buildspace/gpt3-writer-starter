@@ -4,8 +4,8 @@ const Home = () => {
   console.log(event.target.value);
   setUserInput(event.target.value);
 };
-  import { useState } from 'react';
   return (
+     import { useState } from 'react';
     <div className="root">
       <div className="container">
         <div className="header">
