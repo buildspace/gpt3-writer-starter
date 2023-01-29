@@ -1,4 +1,10 @@
 const Home = () => {
+  const [userInput, setUserInput] = useState('');
+  const onUserChangedText = (event) => {
+  console.log(event.target.value);
+  setUserInput(event.target.value);
+};
+  import { useState } from 'react';
   return (
     <div className="root">
       <div className="container">
@@ -10,7 +16,6 @@ const Home = () => {
             <h2>Build The Bend</h2>
           </div>
         </div>
-   
         <div className="prompt-container">
           <textarea placeholder="start typing here" className="prompt-box" />
         </div>
