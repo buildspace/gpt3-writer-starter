@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Image from './Image'; // assuming this is the import for the missing Image component
+import Image from './Image';
+import buildspaceLogo from './buildspaceLogo.png'; // assuming the file name is `buildspaceLogo.png`
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
