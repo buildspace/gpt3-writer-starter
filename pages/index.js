@@ -1,11 +1,4 @@
 import React, { useState } from 'react';
-import { Configuration, OpenAIApi } from 'openai';
-
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-const openai = new OpenAIApi(configuration);
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
@@ -66,3 +59,5 @@ const Home = () => {
     </div>
   );
 };
+
+export default Home;
