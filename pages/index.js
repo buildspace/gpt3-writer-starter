@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import Image from './Image';
-import buildspaceLogo from './buildspaceLogo.png'; // assuming the file name is `buildspaceLogo.png`
+import buildspaceLogo from './buildspaceLogo.png';
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
+  const [generateResponse, setGenerateResponse] = useState('');
+
   const onUserChangedText = (event) => {
     setUserInput(event.target.value);
+  };
+
+  const handleGenerateClick = () => {
+    // Make API call to generate content here
+    setGenerateResponse('Generated content goes here.');
   };
 
   return (
@@ -28,11 +35,14 @@ const Home = () => {
           />
         </div>
         <div className="prompt-buttons">
-          <a className="generate-button" onClick={null}>
+          <a className="generate-button" onClick={handleGenerateClick}>
             <div className="generate">
               <p>Generate</p>
             </div>
           </a>
+        </div>
+        <div className="generated-response">
+          <p>{generateResponse}</p>
         </div>
       </div>
       <div className="badge-container grow">
