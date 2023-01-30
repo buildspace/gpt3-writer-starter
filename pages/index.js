@@ -15,7 +15,7 @@ const Home = () => {
             <h1>574WARD Marketing Assistant</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Build The Bend</h2>
+            <h2>#BuildTheBend</h2>
           </div>
         </div>
         <div className="prompt-container">
