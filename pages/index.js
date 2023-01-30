@@ -5,7 +5,6 @@ const Home = () => {
   setUserInput(event.target.value);
 };
   return (
-     import { useState } from 'react';
     <div className="root">
       <div className="container">
         <div className="header">
@@ -16,9 +15,8 @@ const Home = () => {
             <h2>Build The Bend</h2>
           </div>
         </div>
-    {
-      textarea
-    }
+        </div>
+          {textarea}
         <div className="prompt-container">
           <textarea placeholder="start typing here" className="prompt-box" value={userInput}
     onChange={onUserChangedText} />
@@ -44,6 +42,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
-
+{"}"};
+  }
 export default Home;
