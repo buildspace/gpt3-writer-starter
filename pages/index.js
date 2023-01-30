@@ -12,7 +12,7 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>574WARD Marketing Assistant</h1>
+            <h1>574WARD Personal Assistant</h1>
           </div>
           <div className="header-subtitle">
             <h2>#BuildTheBend</h2>
