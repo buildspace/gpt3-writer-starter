@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import Image from './Image'; // assuming this is the import for the missing Image component
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
