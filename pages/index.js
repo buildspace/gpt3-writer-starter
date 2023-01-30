@@ -1,5 +1,5 @@
 const Home = () => {
-  import { useState } from 'react';
+  import 'react';
   const [userInput, setUserInput] = useState('');
   const onUserChangedText = (event) => {
   console.log(event.target.value);
