@@ -1,4 +1,11 @@
 import React, { useState } from 'react';
+import { Configuration, OpenAIApi } from 'openai';
+
+const configuration = new Configuration({
+  apiKey: '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',
+});
+
+const openai = new OpenAIApi(configuration);
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
