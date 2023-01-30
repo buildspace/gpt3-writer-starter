@@ -1,12 +1,12 @@
+import React, { useState } from 'react';
+
 const Home = () => {
-  import 'react';
   const [userInput, setUserInput] = useState('');
   const onUserChangedText = (event) => {
-  console.log(event.target.value);
-  setUserInput(event.target.value);
-};
+    setUserInput(event.target.value);
+  };
+
   return (
-     import { useState } from 'react';
     <div className="root">
       <div className="container">
         <div className="header">
@@ -17,16 +17,20 @@ const Home = () => {
             <h2>Build The Bend</h2>
           </div>
         </div>
-    {textarea}
         <div className="prompt-container">
-          <textarea placeholder="start typing here" className="prompt-box" value={userInput}
-    onChange={onUserChangedText} />
-      <div className="prompt-buttons">
-    <a className="generate-button" onClick={null}>
-      <div className="generate">
-        <p>Generate</p>
-      </div>
-    </a>
+          <textarea 
+            placeholder="start typing here" 
+            className="prompt-box" 
+            value={userInput} 
+            onChange={onUserChangedText} 
+          />
+        </div>
+        <div className="prompt-buttons">
+          <a className="generate-button" onClick={null}>
+            <div className="generate">
+              <p>Generate</p>
+            </div>
+          </a>
         </div>
       </div>
       <div className="badge-container grow">
