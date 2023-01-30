@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Image from './Image'; // assuming this is the import for the missing Image component
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
@@ -12,10 +11,10 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>574WARD Artificial Assistant</h1>
+            <h1>574WARD Marketing Assistant</h1>
           </div>
           <div className="header-subtitle">
-            <h2>#BuildTheBend</h2>
+            <h2>Build The Bend</h2>
           </div>
         </div>
         <div className="prompt-container">
@@ -33,18 +32,6 @@ const Home = () => {
             </div>
           </a>
         </div>
-      </div>
-      <div className="badge-container grow">
-        <a
-          href="https://buildspace.so/builds/ai-writer"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
-          </div>
-        </a>
       </div>
     </div>
   );
