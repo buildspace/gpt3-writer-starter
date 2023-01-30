@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
-  const [apiOutput, setApiOutput] = useState('')
-  const [isGenerating, setIsGenerating] = useState(false)
+  const [apiOutput, setApiOutput] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const onUserChangedText = (event) => {
     setUserInput(event.target.value);
