@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const Home = () => {
   const [userInput, setUserInput] = useState('');
   const [apiOutput, setApiOutput] = useState('');
