@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import OpenAIApi from 'openai';
+import 
 
 const api = new OpenAIApi({
   apiKey: process.env.OPENAI_API_KEY,
