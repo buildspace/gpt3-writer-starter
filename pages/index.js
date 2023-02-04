@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import openai, from openai
+import {apiOutput, setApiOutput} from openai
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
