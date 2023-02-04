@@ -4,7 +4,7 @@ const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const openai = new OpenAIApi(configuration);
+const api = new OpenAIApi(configuration);
 const basePromptPrefix = "";
 const generateAction = async (req, res) => {
   // Run first prompt
