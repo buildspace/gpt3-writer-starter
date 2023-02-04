@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { OpenAIApi } from 'openai';
+import { useState } from 'react';
+import OpenAIApi from 'openai';
 
-const axiosInstance = axios.create({
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-  }
+const api = new OpenAIApi({
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const Home = () => {
@@ -22,29 +18,14 @@ const Home = () => {
     setIsGenerating(true);
     
     console.log("Calling OpenAI...")
-    const response =  fetch('/api/generate.js', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userInput }),
+    const response = await api.post('/api/generate', {
+      prompt: userInput,
     });
   
-    const data = await  response.json();
-    const { output } = data;
-    console.log("OpenAI replied...", output.text)
-  
-    setApiOutput(`${output.text}`);
+    console.log("OpenAI replied...", response.data.choices[0].text)
+    setApiOutput(response.data.choices[0].text);
     setIsGenerating(false);
   }
-  
-  const Home = () => {
-    const [userInput, setUserInput] = useState("");
-    const onUserChangedText = event => {
-      setUserInput(event.target.value);
-    };
-  }
-const apiKey = process.env.OPENAI_API_KEY;
 
   return (
     <div className="root">
@@ -89,3 +70,4 @@ const apiKey = process.env.OPENAI_API_KEY;
   );
 };
 export default Home;
+
