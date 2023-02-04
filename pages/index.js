@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import process from "./process";
 
 const Home = () => {
-  const [userInput, setUserInput] = useState('');
-  const [apiOutput, setApiOutput] = useState('');
+  const [userInput, setUserInput] = useState("");
+  const [apiOutput, setApiOutput] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
 
   const onUserChangedText = (event) => {
@@ -11,24 +12,23 @@ const Home = () => {
 
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
+    console.log("Calling OpenAI...");
 
-    console.log("Calling OpenAI...")
-    const response = await fetch('/api/generate', {
-      method: 'POST',
+    const response = await fetch("/api/generate", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       },
       body: JSON.stringify({ userInput }),
     });
-
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text)
 
+    console.log("OpenAI replied...", output.text);
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
-  }
+  };
 
   return (
     <div className="root">
@@ -42,11 +42,11 @@ const Home = () => {
           </div>
         </div>
         <div className="prompt-container">
-          <textarea 
-            placeholder="start typing here" 
-            className="prompt-box" 
-            value={userInput} 
-            onChange={onUserChangedText} 
+          <textarea
+            placeholder="start typing here"
+            className="prompt-box"
+            value={userInput}
+            onChange={onUserChangedText}
           />
         </div>
         <div className="prompt-buttons">
@@ -62,3 +62,4 @@ const Home = () => {
 };
 
 export default Home;
+
