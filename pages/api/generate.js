@@ -13,7 +13,7 @@ const finalPromptPrefix = 'Take the lyrics below and generate 5 song titles:\n';
 const generateAction = async (req, res) => {
   // Run first prompt
   const baseCompletion = await openai.createCompletion({
-    model: 'text-davinci-002',
+    model: 'text-davinci-003',
     prompt: `${basePromptPrefix}${req.body.input}`,
     temperature: 0.7,
     max_tokens: 2048,
@@ -25,7 +25,7 @@ const generateAction = async (req, res) => {
   const finalPrompt = `${finalPromptPrefix}${req.body.input}${baseChoice.text}`;
 
   const prefixCompletion = await openai.createCompletion({
-    model: 'text-davinci-002',
+    model: 'text-davinci-003',
     prompt: finalPrompt,
     temperature: 0.7,
     max_tokens: 2048,
