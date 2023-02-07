@@ -35,7 +35,7 @@ body {
     gap: 64px;
 }
 
-.header {    
+.header {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -93,9 +93,10 @@ body {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: 150px;
+    height: 15px;
     overflow: hidden;
     padding: 20px;
+    padding-top:10px;
     position: relative;
     width: 610px;
     max-width: 1200px;
@@ -133,7 +134,7 @@ textarea {
     gap: 12px;
     height: min-content;
     overflow: hidden;
-    padding: 0px;
+
     position: relative;
     width: 100%;
 }
