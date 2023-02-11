@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "cSpell.words": ["clippy"]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": []
+  },
+  "extensions": {
+    "recommendations": ["github.copilot"]
+  }
+}
