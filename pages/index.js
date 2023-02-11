@@ -49,44 +49,15 @@ const callGenerateEndpoint = async () => {
   setApiOutput(`${output.text}`);
   setIsGenerating(false);
 }
+  {/*State für die Seitenleiste*/}
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
 
 {/*Text Changed trigger */}
   const onUserChangedText = (event) => {
     /*console.log(event.target.value);*/
     setUserInput(event.target.value);
   };
-
-  {/*State für die Seitenleiste*/}
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-let selectedTitle = "";
-
-const titleOptions = [
-  "Graham",
-  "eblog writer 2",
-  "The Power of Ideas",
-  "The Importance of Diversity",
-  "The Benefits"
-];
-
-function createTitleDropdown() {
-  const select = document.createElement("select");
-
-  for (let i = 0; i < titleOptions.length; i++) {
-    const option = document.createElement("option");
-    option.value = titleOptions[i];
-    option.text = titleOptions[i];
-    select.appendChild(option);
-  }
-
-  select.onchange = function() {
-    selectedTitle = select.value;
-  };
-
-  document.getElementByClassName("sidebar").appendChild(select);
-}
-
-createTitleDropdown();
 
   return (
     <div className="root">
@@ -149,6 +120,7 @@ createTitleDropdown();
         <div className="sidebar">
 
           {/* Hier könnte ein Menü hinzugefügt werden */}
+          <p>"https://now4free.de"</p>
         </div>
       )}
         </div>
