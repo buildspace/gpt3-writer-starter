@@ -6,15 +6,15 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>Fuorisalone trail blazer</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>sup, insert your headline here</h1>
+            <h1>Your personal assistant to the Fuorisalone</h1>
           </div>
           <div className="header-subtitle">
-            <h2>insert your subtitle here</h2>
+            <h2>Ask your assistant where you want to go and what you want to do!</h2>
           </div>
         </div>
       </div>
