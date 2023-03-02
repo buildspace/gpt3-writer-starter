@@ -4,21 +4,25 @@ import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 
 const Home = () => {
+  const [userInput, setUserInput] = useState('');
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
+  const onUserChangedText = (event) => {
+    setUserInput(event.target.value);
+  };
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
     
     console.log("Calling OpenAI...")
-    let options=  {
+
+    const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ userInput }),
-    };
-    const response = await fetch('/api/generate',options);
+    });
 
     const data = await response.json();
     const { output } = data;
@@ -36,10 +40,10 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h5>Your personal assistant to the Fuorisalone</h5>
+            <h2>Your personal assistant to the Fuorisalone</h2>
           </div>
           <div className="header-subtitle">
-            <h5>Ask your assistant where you want to go and what you want to do!</h5>
+            <h2>Ask your assistant where you want to go and what you want to do!</h2>
           </div>
         </div>
       </div>
@@ -51,13 +55,26 @@ const Home = () => {
           onChange={onUserChangedText}
         /> 
         <div className="prompt-buttons">
-          <a className="generate-button" onClick={null}>
+          <a  className={isGenerating ? 'generate-button loading' : 'generate-button'}
+          onClick={callGenerateEndpoint}>
             <div className="generate">
-              <p>Submit</p>
+            {isGenerating ? <span className="loader"></span> :<p>Submit</p>}
             </div>
           </a>
         </div>
       </div>
+      {apiOutput && (
+        <div className="output">
+          <div className="output-header-container">
+            <div className="output-header">
+              <h3>Output</h3>
+            </div>
+          </div>
+          <div className="output-content">
+            <p>{apiOutput}</p>
+          </div>
+        </div>
+      )}
       <div className="badge-container grow">
         <a
           href="https://buildspace.so/builds/ai-writer"
