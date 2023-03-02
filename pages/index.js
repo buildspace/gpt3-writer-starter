@@ -4,12 +4,29 @@ import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 
 const Home = () => {
-  const [userInput, setUserInput] = useState('');
+  const [apiOutput, setApiOutput] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
 
-  const onUserChangedText = (event) => {
-    // console.log(event.target.value);
-    setUserInput(event.target.value);
-  };
+  const callGenerateEndpoint = async () => {
+    setIsGenerating(true);
+    
+    console.log("Calling OpenAI...")
+    let options=  {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userInput }),
+    };
+    const response = await fetch('/api/generate',options);
+
+    const data = await response.json();
+    const { output } = data;
+    console.log("OpenAI replied...", output.text)
+
+    setApiOutput(`${output.text}`);
+    setIsGenerating(false);
+}
 
   return (
     <div className="root">
@@ -19,10 +36,10 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Your personal assistant to the Fuorisalone</h1>
+            <h5>Your personal assistant to the Fuorisalone</h5>
           </div>
           <div className="header-subtitle">
-            <h2>Ask your assistant where you want to go and what you want to do!</h2>
+            <h5>Ask your assistant where you want to go and what you want to do!</h5>
           </div>
         </div>
       </div>
@@ -32,8 +49,7 @@ const Home = () => {
           className="prompt-box"
           value={userInput}
           onChange={onUserChangedText}
-        />
-
+        /> 
         <div className="prompt-buttons">
           <a className="generate-button" onClick={null}>
             <div className="generate">
