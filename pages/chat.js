@@ -9,7 +9,7 @@ const Home = () => {
   const [isGenerating, setIsGenerating] = useState(false);
 
   const keyPress = (e) => {
-    if (e != undefined) {
+    if (e != undefined && !isGenerating) {
       var evtobj = e
       if (evtobj.code == 'Enter' && evtobj.ctrlKey)
         callGenerateEndpoint();
@@ -64,12 +64,21 @@ const Home = () => {
           onKeyPress={keyPress}
         />
         <div className="prompt-buttons">
-          <a className={isGenerating ? 'generate-button loading' : 'generate-button'}
-            onClick={callGenerateEndpoint}>
-            <div className="generate">
-              {isGenerating ? <span className="loader"></span> : <p>Submit</p>}
-            </div>
-          </a>
+
+          {isGenerating ?
+            <a className='generate-button loading'>
+              <div className="generate">
+                <span className="loader"></span>
+              </div>
+            </a>
+            :
+            <a className='generate-button'
+              onClick={callGenerateEndpoint}>
+              <div className="generate">
+                <p>Submit</p>
+              </div>
+            </a>
+          }
         </div>
       </div>
       {apiOutput && (
@@ -84,7 +93,7 @@ const Home = () => {
           </div>
         </div>
       )}
-      
+
     </div>
   );
 };
