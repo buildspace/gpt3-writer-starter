@@ -6,8 +6,8 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix = 
-`assume you are Elon Musk.
-Elon: `;
+`Assume you are Elon Musk. 
+ME: `;
 
 const generateAction = async (req, res) => {
   // Run first prompt
@@ -21,6 +21,32 @@ const generateAction = async (req, res) => {
   });
 
   const basePromptOutput = baseCompletion.data.choices.pop();
+
+  
+  // I build Prompt #2.
+  const secondPrompt = 
+  `
+  Take the table of contents and Question of the user  below and generate a blog post written in the style of Elon Musk. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+
+  My Question:: ${req.body.userInput}
+
+  Table of Contents: ${basePromptOutput.text}
+
+  Blog Post:
+  `
+  
+  // I call the OpenAI API a second time with Prompt #2
+  const secondPromptCompletion = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `${secondPrompt}`,
+    // I set a higher temperature for this one. Up to you!
+    temperature: 0.85,
+		// I also increase max_tokens.
+    max_tokens: 1250,
+  });
+
+
+
 
   res.status(200).json({ output: basePromptOutput });
 };
