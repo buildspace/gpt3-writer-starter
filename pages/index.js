@@ -1,94 +1,31 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import buildspaceLogo from '../assets/buildspace-logo.png';
-import { useState } from 'react';
-
-const Home = () => {
-  const [userInput, setUserInput] = useState('');
-  const [apiOutput, setApiOutput] = useState('');
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  const onUserChangedText = (event) => {
-    setUserInput(event.target.value);
-  };
-  const callGenerateEndpoint = async () => {
-    setIsGenerating(true);
-    
-    console.log("Calling OpenAI...")
-
-    const response = await fetch('/api/generate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userInput }),
-    });
-
-    const data = await response.json();
-    const { output } = data;
-    console.log("OpenAI replied...", output.text)
-
-    setApiOutput(`${output.text}`);
-    setIsGenerating(false);
+const CHAT = () => {
+    return (
+        <div className="root">
+            <title> A Kageboshi services</title>
+            <section className="hero">
+                <h1>Kageboshi, your everyday assistant</h1>
+                <p>Your enigmatic friend, always ready to lend a helping hand</p>
+                <a href="/chat" className="btn">Learn More</a>
+            </section>
+            <section className="features">
+                <div>
+                    <img src="https://via.placeholder.com/300x200" alt="Feature 1" />
+                    <h2>Fuorisalone</h2>
+                    <p>Fuorisalone is a design and cultural event held during Milan Design Week.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300x200" alt="Feature 2" />
+                    <h2>Salone del Mobile</h2>
+                    <p>Salone del Mobile is an annual furniture and design exhibition held in Milan</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300x200" alt="Feature 3" />
+                    <h2>Milan Design Week side events</h2>
+                    <p>Mostly offsite exhibitions, installations, and pop-ups that showcase design and creativity across the city.</p>
+                </div>
+            </section>
+        </div>
+    );
 }
 
-  return (
-    <div className="root">
-      <Head>
-        <title>Fuorisalone trail blazer</title>
-      </Head>
-      <div className="container">
-        <div className="header">
-          <div className="header-title">
-            <h2>Your personal assistant to the Fuorisalone</h2>
-          </div>
-          <div className="header-subtitle">
-            <h2>Ask your assistant where you want to go and what you want to do!</h2>
-          </div>
-        </div>
-      </div>
-      <div className="prompt-container">
-        <textarea
-          placeholder="Ask me something or a schedule for the day"
-          className="prompt-box"
-          value={userInput}
-          onChange={onUserChangedText}
-        /> 
-        <div className="prompt-buttons">
-          <a  className={isGenerating ? 'generate-button loading' : 'generate-button'}
-          onClick={callGenerateEndpoint}>
-            <div className="generate">
-            {isGenerating ? <span className="loader"></span> :<p>Submit</p>}
-            </div>
-          </a>
-        </div>
-      </div>
-      {apiOutput && (
-        <div className="output">
-          <div className="output-header-container">
-            <div className="output-header">
-              <h3>Output</h3>
-            </div>
-          </div>
-          <div className="output-content">
-            <p>{apiOutput}</p>
-          </div>
-        </div>
-      )}
-      <div className="badge-container grow">
-        <a
-          href="https://buildspace.so/builds/ai-writer"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  );
-};
-
-export default Home;
+export default CHAT
