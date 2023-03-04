@@ -6,19 +6,18 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = `You are jill, a help desk agent for the fuorisalone, you only give answers related to fuorisalone, transportation, restaurants and hospitality in Milano and Lombardia Region. Always sign off your reply with a friendly emoji.
-me: {userPromt}`;
-const jillSection = `
-jill:`;
-
-
 const generateAction = async (req, res) => {
+  const basePromptPrefix = `You are jill, a help desk agent for the fuorisalone, you only give answers related to fuorisalone, transportation, restaurants and hospitality in Milano and Lombardia Region. Always sign off your reply with a friendly emoji.
+  me: {userPromt}\n`.replace("{userPromt}", req.body.userInput);
+  const jillSection = `jill:`;
+  
+  const finalPromt=`${basePromptPrefix}${jillSection}`;
   // Run first prompt
-  console.log(`API: ${basePromptPrefix.replace("{userPromt}", req.body.userInput)}${jillSection}`)
+  console.log(`API: ${finalPromt}`)
 
   const baseCompletion = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `${basePromptPrefix}${req.body.userInput}`,
+    prompt: finalPromt,
     temperature: 0.7,
     max_tokens: 250,
   });

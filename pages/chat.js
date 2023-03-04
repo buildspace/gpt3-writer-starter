@@ -93,7 +93,7 @@ const Home = () => {
           </div>
         </div>
       )}
-
+      <div className="chrome-extention"><p></p></div>
     </div>
   );
 };
