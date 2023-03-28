@@ -172,7 +172,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: rgb(172, 18, 255);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -207,59 +207,6 @@ textarea {
     cursor: default;
 }
 
-.badge-container {
-    display: flex;
-    bottom: 20px;
-    flex: 0 0 auto;
-    height: auto;
-    left: 20px;
-    position: fixed;
-    width: auto;
-    z-index: 1;
-}
-
-.badge-container a {
-    border-bottom-width: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-style: solid;
-    border-top-width: 1px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 54.3478% / 238.095%;
-    filter: grayscale(1);
-    transform: none;
-    transform-origin: 50% 50% 0px;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    line-height: 1em;
-    color: #fff;
-    padding: 12px;
-    text-decoration: none;
-}
-
-.badge {
-    display: flex;
-    align-items: center;
-}
-
-.badge img {
-    width: 21px;
-    height: 17px;
-    image-rendering: pixelated;
-    flex-shrink: 0;
-    fill: black;
-    color: black;
-    transform: none;
-    transform-origin: 50% 50% 0px;
-    padding-right: 5px;
-}
-
-.badge p {
-    margin: 0;
-}
-
 .grow {
     transition: all .2s ease-in-out;
 }
@@ -274,7 +221,7 @@ textarea {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 10px;
+    /* gap: 10px; */
     height: min-content;
     max-width: 1200px;
     overflow: hidden;
@@ -288,7 +235,7 @@ textarea {
     display: flex;
     flex: 0 0 auto;
     flex-flow: column nowrap;
-    gap: 16px;
+    /* gap: 16px; */
     height: min-content;
     overflow: hidden;
     padding: 0px;
@@ -314,10 +261,12 @@ textarea {
     outline: none;
     display: flex;
     /* max-width: 25%; */
+    padding: 10px;
     flex-direction: column;
     justify-content: flex-start;
     flex-shrink: 0;
     transform: none;
+    margin-block-start: -34px;
 }
 
 .output-content p {
