@@ -33,7 +33,7 @@ const Home = () => {
             <h1>remember ur shit.</h1>
           </div>
           <div className="header-subtitle">
-            <h2>it's so hard to remember your principles. let jen help with that.</h2>
+            <h2>it's so hard to remember your principles. let JEN help with that.</h2>
           </div>
         </div>
       </div>
