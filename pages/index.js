@@ -30,7 +30,7 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>remember ur shit.</h1>
+            <h1>reinforce ur shit.</h1>
           </div>
           <div className="header-subtitle">
             <h2>it's so hard to remember your principles. let JEN help with that.</h2>
@@ -39,7 +39,8 @@ const Home = () => {
       </div>
       <div className="prompt-container">
         <textarea
-          placeholder="i don't feel like building in public..."
+          placeholder="i feel pessimistic about other people's ability to be open minded. 
+          i want to email liza about this new feature but i'm worried she might be offended."
           className="prompt-box"
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
