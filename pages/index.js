@@ -39,9 +39,7 @@ const Home = () => {
       </div>
       <div className="prompt-container">
         <textarea
-          placeholder="i feel pessimistic about other people's ability to be open minded. 
-          i want to email liza about this new feature but i'm worried she might be offended. 
-          convince me to still do it."
+          placeholder="i feel like my work is not perfect; convince me to keep creating.."
           className="prompt-box"
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
