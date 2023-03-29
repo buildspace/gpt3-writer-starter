@@ -266,7 +266,7 @@ textarea {
     justify-content: flex-start;
     flex-shrink: 0;
     transform: none;
-    margin-block-start: -24px;
+    margin-block-start: -14px;
 }
 
 .output-content p {
