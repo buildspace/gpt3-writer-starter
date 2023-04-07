@@ -17,10 +17,11 @@ const Home = () => {
     });
     const data = await response.json();
     const { output } = data;
-    
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
+  };
 
+  const playOutput = () => {
     const msg = new SpeechSynthesisUtterance();
     msg.text = apiOutput;
     const allPossibleVoices = speechSynthesis.getVoices();
@@ -31,19 +32,6 @@ const Home = () => {
     msg.voice = targetVoice;
     console.log(window.speechSynthesis)
     window.speechSynthesis.speak(msg);
-  };
-
-  const playOutput = () => {
-    // const msg = new SpeechSynthesisUtterance();
-    // msg.text = apiOutput;
-    // const allPossibleVoices = speechSynthesis.getVoices();
-    // let targetVoice = allPossibleVoices[0];
-    // for (const idx in allPossibleVoices) {
-    //   if (allPossibleVoices[idx].name === 'Boing') targetVoice = allPossibleVoices[idx];
-    // }
-    // msg.voice = targetVoice;
-    // console.log(window.speechSynthesis)
-    // window.speechSynthesis.speak(msg);
   }
 
   return (
