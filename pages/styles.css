@@ -251,17 +251,34 @@ textarea {
     font-weight: 800;
     letter-spacing: 0px;
     line-height: 1.4em;
-    text-align: start;
+    text-align: center;
     color: #ffffff;
     text-decoration: none;
     text-transform: none;
     margin: 0;
 }
 
+.output-header button {
+    background-color: black;
+    width: 100%;
+    color: rgb(182, 179, 182);
+    border: 1px solid rgb(41, 40, 41);
+    border-radius: 10%;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.output-header button:hover {
+    color: rgb(132, 131, 131);
+}
+
+.output-header button:active {
+    color: rgb(82, 81, 81);
+}
+
 .output-content {
     outline: none;
     display: flex;
-    /* max-width: 25%; */
     padding: 10px;
     flex-direction: column;
     justify-content: flex-start;
@@ -274,6 +291,16 @@ textarea {
     text-align: center;
     white-space: pre-line;
     color: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar {
+    background-color: black;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(141, 140, 140);
+    border-radius: 10px;
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
