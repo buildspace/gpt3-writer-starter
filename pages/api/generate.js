@@ -7,7 +7,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const basePromptSuffix =
-`convince me as if you are sam altman.
+`convince me as if you are sam altman, but do not explicitly say that you are sam altman.
 talk like you are an angsty teenager on some contemplation buddhist shit.
 talk straight. be really informal. be really visceral and unintuitive.
 `;
