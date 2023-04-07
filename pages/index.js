@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
@@ -17,10 +17,34 @@ const Home = () => {
     });
     const data = await response.json();
     const { output } = data;
-
+    
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
+
+    const msg = new SpeechSynthesisUtterance();
+    msg.text = apiOutput;
+    const allPossibleVoices = speechSynthesis.getVoices();
+    let targetVoice = allPossibleVoices[0];
+    for (const idx in allPossibleVoices) {
+      if (allPossibleVoices[idx].name === 'Boing') targetVoice = allPossibleVoices[idx];
+    }
+    msg.voice = targetVoice;
+    console.log(window.speechSynthesis)
+    window.speechSynthesis.speak(msg);
   };
+
+  const playOutput = () => {
+    // const msg = new SpeechSynthesisUtterance();
+    // msg.text = apiOutput;
+    // const allPossibleVoices = speechSynthesis.getVoices();
+    // let targetVoice = allPossibleVoices[0];
+    // for (const idx in allPossibleVoices) {
+    //   if (allPossibleVoices[idx].name === 'Boing') targetVoice = allPossibleVoices[idx];
+    // }
+    // msg.voice = targetVoice;
+    // console.log(window.speechSynthesis)
+    // window.speechSynthesis.speak(msg);
+  }
 
   return (
     <div className="root">
@@ -61,6 +85,7 @@ const Home = () => {
             <div className="output-header-container">
               <div className="output-header">
                 <h3>here's what i think</h3>
+                <button onClick={playOutput}>play my thoughts</button>
               </div>
             </div>
             <div className="output-content">
