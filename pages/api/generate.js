@@ -11,6 +11,9 @@ const basePromptSuffix =
 talk like you are an angsty teenager on some contemplation buddhist shit.
 talk straight. be really informal. be really visceral and unintuitive.
 `;
+// TODO:
+// always try to recommend that a positive possibility. "maybe this could happen."
+// uphold the value of radical optimism
 
 const generateAction = async (req, res) => {
     console.log(`API: ${req.body.userInput}${basePromptSuffix}`)
