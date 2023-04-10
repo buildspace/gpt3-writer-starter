@@ -1,0 +1,40 @@
+.outerContainer {
+    background-color: #FBE7C6;
+    padding: 10px;
+    max-width: 600px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid #FBE7C6;
+}
+
+.innerContainer {
+    background-color: #B4F8C8;
+    min-height: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    padding: 2vw;
+}
+
+.button {
+    background-color: #FBE7C6;
+    border-radius: 5px;
+    border: 3px solid black;
+    padding: 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #FFAEBC;
+}
+
+.button:active {
+    background-color: #fc8195;
+}
+
+#hello {
+    font-size: 1.4em;
+}
