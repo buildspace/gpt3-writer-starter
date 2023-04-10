@@ -13,16 +13,32 @@ const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
 
-  const baseCompletion = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: `${basePromptPrefix}${req.body.userInput}\n`,
+  const baseCompletion = await openai.createChatCompletion({
+    model: 'gpt-3.5-turbo',
+    messages: [{role: "user", content: `${basePromptPrefix}${req.body.userInput}` }],
     temperature: 1.0,
     max_tokens: 250,
   });
   
-  const basePromptOutput = baseCompletion.data.choices.pop();
+  const basePromptOutput = baseCompletion.data.choices[0].message.content;
 
   res.status(200).json({ output: basePromptOutput });
 };
 
 export default generateAction;
+
+//CHAT-GPT 3
+// const generateAction = async (req, res) => {
+//   // Run first prompt
+//   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
+
+//   const baseCompletion = await openai.createCompletion({
+//     model: 'text-davinci-003',
+//     prompt: `${basePromptPrefix}${req.body.userInput}\n`,
+//     temperature: 1.0,
+//     max_tokens: 250,
+//   });
+  
+//   const basePromptOutput = baseCompletion.data.choices.pop();
+
+//   res.status(200).json({ output: basePromptOutput });

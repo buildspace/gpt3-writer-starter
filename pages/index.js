@@ -24,9 +24,9 @@ const Home = () => {
   
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text)
+    console.log("OpenAI replied...", output)
   
-    setApiOutput(`${output.text}`);
+    setApiOutput(`${output}`);
     setIsGenerating(false);
   }
 
