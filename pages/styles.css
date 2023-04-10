@@ -8,8 +8,8 @@ body {
     padding: 0;
     font-family: 'Manrope', sans-serif;
     background-color: #A0E7E5;
-    height: 100vh;
-    /* border: 10px solid black; - add a frame ?? */
+    height: 95vh;
+    border: 20px dashed hsl(0, 0%, 20%);
 }
 
 .root {
