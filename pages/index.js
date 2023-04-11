@@ -12,8 +12,8 @@ function Home() {
       <Layout>
         <h4 style={{ fontSize: '1.4em' }}>hello, hello, hello :)</h4>
         <h1>welcome to reinforce!</h1>
-        <h3>to talk to jen, sign up here.</h3>
-        <Button onClickAction={() => signIn()}>sign up!</Button>
+        <h3>to talk to jen, sign in here.</h3>
+        <Button onClickAction={() => signIn()}>sign in!</Button>
       </Layout>
     </>
   );
