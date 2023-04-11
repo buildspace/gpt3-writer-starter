@@ -1,94 +1,25 @@
-import Head from 'next/head';
 import { useSession, signOut } from 'next-auth/react';
-import { useState } from 'react';
-import { getServerSession } from 'next-auth';
+import { getServerSession } from 'next-auth/next';
+import Link from 'next/link';
+import Button from '../lib/button';
+import Header from '../lib/header';
 import { authOptions } from './api/auth/[...nextauth]';
 
 function Dashboard() {
-  const [userInput, setUserInput] = useState('');
-  const [apiOutput, setApiOutput] = useState('');
-  const [isGenerating, setIsGenerating] = useState(false);
   const { data: session } = useSession();
-  const callGenerateEndpoint = async () => {
-    setIsGenerating(true);
-    const response = await fetch('/api/generate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userInput }),
-    });
-    const data = await response.json();
-    const { output } = data;
-    setApiOutput(`${output.text}`);
-    setIsGenerating(false);
-  };
-
-  const playOutput = () => {
-    const msg = new SpeechSynthesisUtterance();
-    msg.text = apiOutput;
-    const allPossibleVoices = speechSynthesis.getVoices();
-    let targetVoice = allPossibleVoices[0];
-    for (let idx; idx < allPossibleVoices.length(); idx + 1) {
-      if (allPossibleVoices[idx].name === 'Boing') targetVoice = allPossibleVoices[idx];
-    }
-    msg.voice = targetVoice;
-    window.speechSynthesis.speak(msg);
-  };
-
   return (
-    <div className="root">
-      <Head>
-        <title>dashboard</title>
-      </Head>
-      <div className="container">
-        <div className="header">
-          <div className="header-title">
-            <h1>reinforce ur shit.</h1>
-          </div>
-          <div className="header-subtitle">
-            <h2>it&apos;s so hard to remember your principles. let JEN help with that.</h2>
-          </div>
-        </div>
-      </div>
-      <div className="prompt-container">
-        <textarea
-          placeholder="i feel like my work is not perfect; convince me to keep creating.."
-          className="prompt-box"
-          value={userInput}
-          onChange={(e) => setUserInput(e.target.value)}
-        />
-        <div className="prompt-buttons">
-          <a
-            className={isGenerating ? 'generate-button loading' : 'generate-button'}
-            onClick={callGenerateEndpoint}
-          >
-            <div>
-              { isGenerating ? <span className="loader" /> : <p>JENerate</p> }
-            </div>
-          </a>
-        </div>
-
-        { apiOutput && (
-          <div className="output">
-            <div className="output-header-container">
-              <div className="output-header">
-                <h3>here&apos;s what i think</h3>
-                <button type="button" onClick={playOutput}>play my thoughts</button>
-              </div>
-            </div>
-            <div className="output-content">
-              <p>{apiOutput}</p>
-            </div>
-          </div>
-        ) }
-      </div>
-      <br />
-      <button type="button" onClick={() => signOut()}>
-        Sign out
-        {` ${session.user.name}`}
-      </button>
-    </div>
+    <>
+      <Header>{`${session.user.name.toLowerCase()}'s dashboard`}</Header>
+      {/* <Category> */}
+      <Link href="/prompt">click here to go to a text convo w jen</Link>
+      {/* <Description></Description> */}
+      {/* </Category> */}
+      <Link href="/bookmarks">click here to see ur fav convos w jen :))</Link>
+      <Link href="/notes">click here to go to ur notes</Link>
+      <Link href="/video-call">click here to go to a video call w jen</Link>
+      <Link href="/voice-call">click here to go to an voice call w jen</Link>
+      <button onClick={() => signOut()}>sign out</button>
+    </>
   );
 }
 
