@@ -1,3 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import PropTypes from 'prop-types';
 import { getProviders, signIn } from 'next-auth/react';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from './api/auth/[...nextauth]';
@@ -22,6 +25,13 @@ function SignIn({ providers }) {
     </Layout>
   );
 }
+
+SignIn.propTypes = {
+  providers: PropTypes.shape({
+    name: PropTypes.string,
+    id: PropTypes.string,
+  }).isRequired,
+};
 
 export async function getServerSideProps(context) {
   const { req, res } = context;
