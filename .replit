@@ -1,4 +1,5 @@
-hidden=[".config"]
+run="npm run dev"
+entrypoint="pages/index.js"
 
 # hosting is currently hardcoded for this language
 # [hosting]
