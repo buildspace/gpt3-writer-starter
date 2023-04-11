@@ -12,7 +12,6 @@ function SignIn({ providers }) {
           <Button
             type="button"
             onClickAction={() => signIn(provider.id)}
-            style={{ width: '95%' }}
           >
             sign in with
             {' '}
