@@ -1,7 +1,14 @@
+.landscape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
 .outerContainer {
     background-color: #FBE7C6;
     padding: 10px;
-    max-width: 600px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     border: 1px solid #FBE7C6;
 }
