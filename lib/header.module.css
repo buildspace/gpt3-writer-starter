@@ -1,21 +1,10 @@
-.outerContainer {
-    background-color: #FBE7C6;
-    padding: 10px;
-    padding-left: 20px;
+.container {
+    padding-left: 30px;
     text-align: center;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
-    border-radius: 18%;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-}
-
-.innerContainer {
-    border: 1px solid black;
-    border-radius: 18%;
-    background-color: #B4F8C8;
 }
 
 .title {
+    text-decoration: underline;
+    /* background-color: #fcdca8; */
     display: inline-block;
-    background-color: #FBE7C6;
 }

@@ -1,0 +1,18 @@
+.box {
+    width: 300px;
+    border: 2px solid #FFAEBC;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.innerBox {
+    border: 3px solid #FBE7C6;
+    padding: 10px;
+}
+
+@media screen and (max-width: 350px) {
+    .box {
+        margin: 20px;
+        width: 200px;
+    }
+}
