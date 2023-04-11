@@ -1,10 +1,25 @@
 .container {
-    padding-left: 30px;
-    text-align: center;
+    padding: 10px 20%;
+    text-align: left;
 }
 
 .title {
     text-decoration: underline;
-    /* background-color: #fcdca8; */
-    display: inline-block;
+    background-color: hsl(178, 60%, 78%);
+    /* border: 1px dotted black; */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+    padding: 10px 20px;
+    /* display: inline-block; */
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        text-align: left;
+    }
+    .title {
+        /* padding: 0px; */
+        background-color: inherit;
+        border: none;
+    }
 }

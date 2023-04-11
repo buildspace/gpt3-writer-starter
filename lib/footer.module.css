@@ -1,0 +1,22 @@
+.footerContainer {
+    position: absolute;
+    bottom: 0;
+}
+
+.button {
+    background-color: hsl(138, 83%, 84%);
+    border: 1px solid black;
+    padding: 10px 3px;
+    font-size: 0.9rem;
+    margin: 4px 2px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: hsl(37, 87%, 88%);
+}
+
+.button:active {
+    background-color: hsl(350, 100%, 80%); 
+}
