@@ -21,6 +21,16 @@ function Dashboard() {
             <Button><Link href="/prompt">let&apos;s go!</Link></Button>
           </Category>
           <Category>
+            <h3>video call</h3>
+            <p>go on a video call w jen and her friends!</p>
+            <Button><Link href="/video-call">let&apos;s go!</Link></Button>
+          </Category>
+          <Category>
+            <h3>scoreboard</h3>
+            <p>see how well jen&apos;s advice works out for ya</p>
+            <Button><Link href="/scoreboard">let&apos;s go!</Link></Button>
+          </Category>
+          <Category>
             <h3>bookmarks</h3>
             <p>see ur fav convos w jen :)</p>
             <Button><Link href="/bookmarks">let&apos;s go!</Link></Button>
@@ -28,17 +38,7 @@ function Dashboard() {
           <Category>
             <h3>notes</h3>
             <p>see ur highlights & notes</p>
-            <Button><Link href="/prompt">let&apos;s go!</Link></Button>
-          </Category>
-          <Category>
-            <h3>video call</h3>
-            <p>go on a video call w jen and her friends!</p>
-            <Button><Link href="/prompt">let&apos;s go!</Link></Button>
-          </Category>
-          <Category>
-            <h3>audio call</h3>
-            <p>go on an audio call w jen and her friends!</p>
-            <Button><Link href="/prompt">let&apos;s go!</Link></Button>
+            <Button><Link href="/notes">let&apos;s go!</Link></Button>
           </Category>
         </CategoryGrid>
       </div>

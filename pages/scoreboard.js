@@ -1,5 +1,5 @@
-function Notes() {
+function Scoreboard() {
   return <div>whaaaaaaatttttt doooooo uuuuu waaaanntttt frrrrrooooommm meeeeeee</div>;
 }
 
-export default Notes;
+export default Scoreboard;

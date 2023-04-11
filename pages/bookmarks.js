@@ -1,5 +1,5 @@
-function Notes() {
+function Bookmarks() {
   return <div>woooooooooorkingggg onnnnn iiiiiiitttttttt</div>;
 }
 
-export default Notes;
+export default Bookmarks;
