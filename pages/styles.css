@@ -13,7 +13,6 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -43,7 +42,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: hsl(0, 0%, 20%);
 }
 
 .header-title {
@@ -66,7 +65,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
-    color: rgba(255, 255, 255, 0.75);
+    color: hsl(0, 0%, 20%);
 }
 
 .prompt-container {
@@ -84,13 +83,14 @@ body {
 .prompt-box {
     border-bottom-width: 1px;
     border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
     border-left-width: 1px;
     border-right-width: 1px;
     border-style: solid;
     border-top-width: 1px;
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: #a3f7f4;
     border-radius: 16px;
     display: flex;
     flex: 0 0 auto;
@@ -111,7 +111,7 @@ body {
     letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
-    color: rgba(255, 255, 255, 0.75);
+    color: hsl(0, 0%, 20%);
     text-decoration: none;
     text-transform: none;
 }
@@ -122,7 +122,7 @@ textarea {
 
 
 .prompt-box:focus {
-    border-color:rgba(255, 255, 255, 0.75)
+    border-color:hsl(0, 0%, 20%);
 }
 
 
@@ -175,7 +175,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(172, 18, 255);
+    background-color: hsl(350, 100%, 84%);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -254,16 +254,16 @@ textarea {
     letter-spacing: 0px;
     line-height: 1.4em;
     text-align: center;
-    color: #ffffff;
+    color: hsl(0, 0%, 20%);
     text-decoration: none;
     text-transform: none;
     margin: 0;
 }
 
 .output-header button {
-    background-color: black;
+    background-color: inherit;
     width: 100%;
-    color: rgb(182, 179, 182);
+    color: hsl(0, 0%, 20%);
     border: 1px solid rgb(41, 40, 41);
     border-radius: 10%;
     padding: 10px;
@@ -271,11 +271,11 @@ textarea {
 }
 
 .output-header button:hover {
-    color: rgb(132, 131, 131);
+    background-color: #FBE7C6;
 }
 
 .output-header button:active {
-    color: rgb(82, 81, 81);
+    background-color: hsl(350, 100%, 84%);
 }
 
 .output-content {
@@ -292,7 +292,7 @@ textarea {
 .output-content p {
     text-align: center;
     white-space: pre-line;
-    color: rgba(255, 255, 255, 0.5);
+    color: hsl(0, 0%, 20%);
 }
 
 ::-webkit-scrollbar {

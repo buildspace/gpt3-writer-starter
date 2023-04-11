@@ -1,7 +1,7 @@
 import { signIn } from 'next-auth/react';
 import Head from 'next/head';
-import Layout from '../lib/layout';
-import Button from '../lib/button';
+import Layout from '../lib/layout/layout';
+import Button from '../lib/button/button';
 
 function Home() {
   return (

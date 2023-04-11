@@ -4,7 +4,7 @@
 }
 
 .button {
-    background-color: hsl(138, 83%, 84%);
+    background-color: hsl(37, 87%, 88%);
     border: 1px solid black;
     padding: 10px 3px;
     font-size: 0.9rem;
@@ -14,7 +14,7 @@
 }
 
 .button:hover {
-    background-color: hsl(37, 87%, 88%);
+    background-color: hsl(350, 100%, 84%);
 }
 
 .button:active {

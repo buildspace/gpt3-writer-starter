@@ -1,8 +1,8 @@
 import { getProviders, signIn } from 'next-auth/react';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from './api/auth/[...nextauth]';
-import Layout from '../lib/layout';
-import Button from '../lib/button';
+import Layout from '../lib/layout/layout';
+import Button from '../lib/button/button';
 
 function SignIn({ providers }) {
   return (

@@ -1,16 +1,15 @@
 .container {
-    padding: 10px 20%;
     text-align: left;
+    margin: 10px;
 }
 
 .title {
     text-decoration: underline;
-    background-color: hsl(178, 60%, 78%);
-    /* border: 1px dotted black; */
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    background-color: #B4F8C8;
+    border: 5px solid #FBE7C6;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
     margin-top: 0;
     padding: 10px 20px;
-    /* display: inline-block; */
 }
 
 @media screen and (max-width: 500px) {
@@ -18,7 +17,8 @@
         text-align: left;
     }
     .title {
-        /* padding: 0px; */
+        box-shadow: none;
+        padding-left: 40px;
         background-color: inherit;
         border: none;
     }

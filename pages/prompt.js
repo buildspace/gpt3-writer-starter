@@ -35,7 +35,6 @@ function Prompt() {
     msg.voice = targetVoice;
     window.speechSynthesis.speak(msg);
   };
-
   return (
     <div className="root">
       <Head>
@@ -83,11 +82,6 @@ function Prompt() {
           </div>
         ) }
       </div>
-      <br />
-      <button type="button" onClick={() => signOut()}>
-        Sign out
-        {` ${session.user.name}`}
-      </button>
     </div>
   );
 }
