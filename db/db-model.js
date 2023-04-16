@@ -13,9 +13,14 @@ const connectionString = process.env.DB_URL;
  */
 
 module.exports.query = async (text, values, callback) => {
-  const client = new Client({ connectionString });
-  await client.connect();
-  const result = client.query(text, values, callback);
-  await client.end();
-  return result;
+  try {
+    const client = new Client({ connectionString });
+    await client.connect();
+    const result = await client.query(text, values, callback);
+    await client.end();
+    return result;
+  } catch (e) {
+    console.log(e);
+    return new Error('ERROR while querying database: ', e);
+  }
 };

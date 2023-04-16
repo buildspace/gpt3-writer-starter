@@ -85,7 +85,7 @@ function Prompt() {
             </div>
           </div>
         ) }
-        <HighlightBox />
+        <HighlightBox fullPromptText={apiOutput} />
       </div>
     </div>
   );
