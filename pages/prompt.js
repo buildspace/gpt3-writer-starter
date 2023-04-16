@@ -5,14 +5,16 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]';
+import HighlightBox from '../lib/highlight-box/highlight-box';
 
 function Prompt() {
   const [userInput, setUserInput] = useState('');
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
+
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
-    const response = await fetch('/api/generate', {
+    const response = await fetch('/api/prompt/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,6 +38,7 @@ function Prompt() {
     msg.voice = targetVoice;
     window.speechSynthesis.speak(msg);
   };
+
   return (
     <div className="root">
       <Head>
@@ -53,7 +56,7 @@ function Prompt() {
       </div>
       <div className="prompt-container">
         <textarea
-          placeholder="i feel like my work is not perfect; convince me to keep creating.."
+          placeholder="i feel like my work is not perfect; it's gotten so hard for me to keep creating."
           className="prompt-box"
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
@@ -82,6 +85,7 @@ function Prompt() {
             </div>
           </div>
         ) }
+        <HighlightBox />
       </div>
     </div>
   );

@@ -1,0 +1,7 @@
+.container {
+    background-color: hsl(138, 83%, 84%);
+    border: 1px solid white;
+    width: 100px;
+    border-radius: 10px;
+    position: absolute;
+}

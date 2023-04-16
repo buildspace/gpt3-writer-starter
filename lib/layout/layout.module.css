@@ -14,7 +14,7 @@
 }
 
 .innerContainer {
-    background-color: #B4F8C8;
+    background-color: hsl(138, 83%, 84%);
     min-height: 400px;
     text-align: center;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
