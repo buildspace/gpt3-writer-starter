@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]';
+import Title from '../lib/title/title';
 import HighlightBox from '../lib/highlight-box/highlight-box';
 
 function Prompt() {
@@ -44,16 +45,10 @@ function Prompt() {
       <Head>
         <title>dashboard</title>
       </Head>
-      <div className="container">
-        <div className="header">
-          <div className="header-title">
-            <h1>reinforce ur shit.</h1>
-          </div>
-          <div className="header-subtitle">
-            <h2>it&apos;s so hard to remember your principles. let JEN help with that.</h2>
-          </div>
-        </div>
-      </div>
+      <Title
+        title="reinforce ur shit."
+        subtitle="it's so hard to remember ur principles. let JEN help with that."
+      />
       <div className="prompt-container">
         <textarea
           placeholder="i feel like my work is not perfect; it's gotten so hard for me to keep creating."

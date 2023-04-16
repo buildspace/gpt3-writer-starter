@@ -21,53 +21,6 @@ body {
     position: relative;
 }
 
-.container {
-    display: flex;
-    place-content: center flex-start;
-    align-items: center;
-    flex: 0 0 auto;
-    flex-flow: column nowrap;
-    gap: 10px;
-    height: fit-content;
-    max-width: 975px;
-    overflow: auto;
-    padding: 50px;
-    position: relative;
-    width: auto;
-    gap: 64px;
-}
-
-.header {    
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    color: hsl(0, 0%, 20%);
-}
-
-.header-title {
-    display: flex;
-    gap: 12px;
-}
-
-.header-title h1 {
-    width: 100%;
-    font-weight: 700;
-    font-size: 72px;
-    letter-spacing: -4px;
-    line-height: 1.2em;
-    text-align: center;
-    margin: 0;
-}
-
-.header-subtitle h2 {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.4em;
-    color: hsl(0, 0%, 20%);
-}
-
 .prompt-container {
     place-content: flex-end center;
     align-items: center;
@@ -338,19 +291,6 @@ textarea {
 }
 
 @media (max-width: 600px) {
-    .container {
-        max-width: 400px;
-        width: 100%;
-    }
-
-    .header-title h1 {
-        font-size: 50px;
-    }
-
-    .header-subtitle h2 {
-        text-align: center;
-    }
-
     .key-stroke, .or {
         display: none;
     }
