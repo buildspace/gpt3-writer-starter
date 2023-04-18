@@ -32,7 +32,7 @@ body {
     padding: 50px;
     position: relative;
     width: auto;
-    gap: 64px;
+    gap: 40px;
 }
 
 .header {    
@@ -93,8 +93,8 @@ body {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: 150px;
     overflow: hidden;
+    height: 64px;
     padding: 20px;
     position: relative;
     width: 610px;
@@ -322,7 +322,7 @@ textarea {
 
 .output-content p {
     text-align: center;
-    white-space: pre-line;
+    /* white-space: pre-line; */
     color: rgba(255, 255, 255, 0.5);
 }
 
