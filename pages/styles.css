@@ -9,18 +9,6 @@ body {
     border: 20px dashed hsl(0, 0%, 20%);
 }
 
-.root {
-    display: flex;
-    place-content: center flex-start;
-    align-items: center;
-    flex-flow: column nowrap;
-    gap: 10px;
-    height: 100vh;
-    overflow: auto;
-    padding: 0px;
-    position: relative;
-}
-
 .prompt-container {
     place-content: flex-end center;
     align-items: center;

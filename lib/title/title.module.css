@@ -59,3 +59,9 @@
         text-align: center;
     }   
 }
+
+@media (max-width: 500px) {
+    .headerTitle h1 {
+        font-size: 40px;
+    }
+}

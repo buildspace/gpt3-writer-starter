@@ -1,8 +1,25 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import Title from '../lib/title/title';
+import Root from '../lib/root/root';
 
-function Bookmarks({ bookmarks }) {
-  return <div>woooooooooorkingggg onnnnn iiiiiiitttttttt</div>;
+function Bookmarks({ bookmarks, oneLineSummaries }) {
+  return (
+    <Root>
+      <Head><title>bookmarks</title></Head>
+      <Title title="ur bookmarks" subtitle="" />
+      <ul>
+        {
+          bookmarks.map((el, idx) => (
+            <div key={el.id}>
+              <h3>{oneLineSummaries[idx]}</h3>
+              <p>{el.highlight_flag}</p>
+            </div>
+          ))
+        }
+      </ul>
+    </Root>
+  );
 }
 
 Bookmarks.propTypes = {
@@ -15,6 +32,9 @@ Bookmarks.propTypes = {
       reason_for_highlight: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  oneLineSummaries: PropTypes.arrayOf(
+    PropTypes.string.isRequired,
+  ).isRequired,
 };
 
 const getBaseURL = () => {
@@ -23,12 +43,31 @@ const getBaseURL = () => {
   return baseURL;
 };
 
+const generateSummary = async (text) => {
+  const response = await fetch(`${getBaseURL()}/api/prompt/generate-summary`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ text }),
+  });
+  const data = JSON.stringify(response);
+  const { output } = data;
+  return output.text;
+};
+
+const getSummaries = async (bookmarks) => {
+  const summaries = [];
+  bookmarks.map(async (el) => summaries.push((await generateSummary(el.full_prompt_text))));
+  return summaries;
+};
+
 export const getStaticProps = async () => {
   const response = await fetch(`${getBaseURL()}/api/bookmarks/get-bookmarks`);
   const bookmarks = await response.json();
-  console.log('bookmarks', bookmarks);
+  const oneLineSummaries = await getSummaries(bookmarks);
   return {
-    props: { bookmarks },
+    props: { bookmarks, oneLineSummaries },
   };
 };
 

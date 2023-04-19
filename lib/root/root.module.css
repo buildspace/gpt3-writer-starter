@@ -1,0 +1,13 @@
+.root {
+    display: flex;
+    place-content: center flex-start;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 10px;
+    height: 100vh;
+    overflow: auto;
+    padding: 0px;
+    position: relative;
+    overflow-x: hidden;
+    padding: 30px;
+}

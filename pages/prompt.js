@@ -7,6 +7,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]';
 import Title from '../lib/title/title';
 import HighlightBox from '../lib/highlight-box/highlight-box';
+import Root from '../lib/root/root';
 
 function Prompt() {
   const [userInput, setUserInput] = useState('');
@@ -41,7 +42,7 @@ function Prompt() {
   };
 
   return (
-    <div className="root">
+    <Root>
       <Head>
         <title>dashboard</title>
       </Head>
@@ -82,7 +83,7 @@ function Prompt() {
         ) }
         <HighlightBox fullPromptText={apiOutput} />
       </div>
-    </div>
+    </Root>
   );
 }
 
