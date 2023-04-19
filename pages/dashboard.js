@@ -28,9 +28,9 @@ function Dashboard() {
             <Link href="/prompt"><Button onClickAction={() => {}}>let&apos;s go</Button></Link>
           </Category>
           <Category>
-            <h3>video call</h3>
-            <p>go on a video call w jen and her friends!</p>
-            <Link href="/video-call"><Button onClickAction={() => {}}>let&apos;s go</Button></Link>
+            <h3>audio call</h3>
+            <p>go on a audio call w jen and her friends!</p>
+            <Link href="/audio-call"><Button onClickAction={() => {}}>let&apos;s go</Button></Link>
           </Category>
           <Category>
             <h3>scoreboard</h3>
