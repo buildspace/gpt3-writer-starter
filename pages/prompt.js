@@ -8,26 +8,12 @@ import { authOptions } from './api/auth/[...nextauth]';
 import Title from '../lib/title/title';
 import HighlightBox from '../lib/highlight-box/highlight-box';
 import Root from '../lib/root/root';
+import getGeneration from '../utils/request-generation';
 
 function Prompt() {
   const [userInput, setUserInput] = useState('');
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
-
-  const callGenerateEndpoint = async () => {
-    setIsGenerating(true);
-    const response = await fetch('/api/prompt/generate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userInput }),
-    });
-    const data = await response.json();
-    const { output } = data;
-    setApiOutput(`${output.text}`);
-    setIsGenerating(false);
-  };
 
   const playOutput = () => {
     const msg = new SpeechSynthesisUtterance();
@@ -39,6 +25,13 @@ function Prompt() {
     }
     msg.voice = targetVoice;
     window.speechSynthesis.speak(msg);
+  };
+
+  const callGenerateEndpoint = async () => {
+    setIsGenerating(true);
+    const text = await getGeneration(userInput);
+    setApiOutput(text);
+    setIsGenerating(false);
   };
 
   return (
