@@ -12,7 +12,7 @@ import Footer from '../lib/footer/footer';
 // import Root from '../lib/root/root';
 
 function Dashboard() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ function Dashboard() {
       </Head>
       <div style={{ maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto' }}>
         {/* <Title title="ur dashboard" subtitle="" /> */}
-        <Header username={`${session.user.name.toLowerCase()}`} page="dashboard" />
+        {/* <Header username={`${session.user.name.toLowerCase()}`} page="dashboard" /> */}
         <CategoryGrid>
           <Category>
             <h3>prompt</h3>
@@ -57,13 +57,13 @@ function Dashboard() {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { req, res } = context;
-  const session = await getServerSession(req, res, authOptions);
-  if (!session) {
-    return { redirect: { destination: '/' } };
-  }
-  return { props: { session } };
-}
+// export async function getServerSideProps(context) {
+//   const { req, res } = context;
+//   const session = await getServerSession(req, res, authOptions);
+//   if (!session) {
+//     return { redirect: { destination: '/' } };
+//   }
+//   return { props: { session } };
+// }
 
 export default Dashboard;
