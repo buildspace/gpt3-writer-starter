@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Button from '../lib/button/button';
-import { getGeneration } from '../utils/get-generation';
+import { getGeneration, createFullChatContextForPrompt } from '../utils/prompt-helpers';
 import { useSpeechSynthesis } from 'react-speech-kit';
 
 function AudioCall() {
@@ -16,7 +16,7 @@ function AudioCall() {
   const [isGenerating, setIsGenerating] = useState(false);
   const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis();
   const englishVoices = voices.filter(voice => voice.lang.includes('en'));
-  const [chat, setChat] = useState(null);
+  const [chat, setChat] = useState([]);
   const [conversationStatus, setConversationStatus] = useState('not-started');
   if (!browserSupportsSpeechRecognition || !supported) {
     return (
@@ -38,17 +38,15 @@ function AudioCall() {
     SpeechRecognition.stopListening();
     resetTranscript();
     await getResponse();
-    updateConversation();
   }
   const getResponse = async () => {
     setIsGenerating(true);
-    const responseText = await getGeneration(transcript);
+    const prompt = createFullChatContextForPrompt(chat, transcript);
+    const responseText = await getGeneration(prompt);
     setIsGenerating(false);
     setGeneration(responseText);
-  };
-  const updateConversation = () => {
-    speak({ text, voice: englishVoices[0] });
-    setChat([...chat, { user: transcript, JEN: text }]);
+    speak({ text: responseText, voice: englishVoices[0] });
+    setChat([...chat, { user: transcript, JEN: responseText }]);
   };
   const endCall = () => {
     if (listening) {
@@ -56,7 +54,6 @@ function AudioCall() {
     }
     setConversationStatus('closed');
   };
-  console.log('HELLOOOOOO?????')
   return (
     <>
       <Button onClickAction={startListening}>open call</Button>
@@ -65,7 +62,7 @@ function AudioCall() {
             <>
               <h4>audio transcript</h4>
               {
-                chat !== null
+                chat.length
                  ? chat.map((el) => (
                     <>
                       <p>you: { el.user }</p>
@@ -75,7 +72,8 @@ function AudioCall() {
                   : null
               }
               { listening ? <p>you: { transcript }</p> : null }
-              <div style={{ width: '300px', display: 'flex' }}>
+              { isGenerating ? <p>hmm...interesting - let me think about it.</p> : null }
+              <div style={{ width: '700px', display: 'flex' }}>
                 <Button onClickAction={stopListening}>stop recording</Button>
                 <Button onClickAction={resetTranscript}>reset recording</Button>
                 <Button onClickAction={endCall}>end call</Button>
