@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Button from '../lib/button/button';
-import getGeneration from '../utils/get-generation';
+import { getGeneration } from '../utils/get-generation';
 import { useSpeechSynthesis } from 'react-speech-kit';
 
 function AudioCall() {
@@ -16,7 +16,7 @@ function AudioCall() {
   const [isGenerating, setIsGenerating] = useState(false);
   const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis();
   const englishVoices = voices.filter(voice => voice.lang.includes('en'));
-  const [chat, setChat] = useState([{ user: '', JEN: '' }]);
+  const [chat, setChat] = useState(null);
   const [conversationStatus, setConversationStatus] = useState('not-started');
   if (!browserSupportsSpeechRecognition || !supported) {
     return (
@@ -56,6 +56,7 @@ function AudioCall() {
     }
     setConversationStatus('closed');
   };
+  console.log('HELLOOOOOO?????')
   return (
     <>
       <Button onClickAction={startListening}>open call</Button>
@@ -64,19 +65,21 @@ function AudioCall() {
             <>
               <h4>audio transcript</h4>
               {
-                chat.map((el) => (
-                  <>
-                    <p>you: {el.user}</p>
-                    <p>jen: {el.JEN}</p>             
-                  </>
-                ))
+                chat !== null
+                 ? chat.map((el) => (
+                    <>
+                      <p>you: { el.user }</p>
+                      <p>jen: { el.JEN }</p>             
+                    </>
+                  ))
+                  : null
               }
-              <div style={{ width: '300px' }}>
+              { listening ? <p>you: { transcript }</p> : null }
+              <div style={{ width: '300px', display: 'flex' }}>
                 <Button onClickAction={stopListening}>stop recording</Button>
                 <Button onClickAction={resetTranscript}>reset recording</Button>
                 <Button onClickAction={endCall}>end call</Button>
               </div>
-              <p>{ transcript }</p>
             </>
           )
           : conversationStatus === 'closed'

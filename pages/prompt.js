@@ -8,7 +8,7 @@ import { authOptions } from './api/auth/[...nextauth]';
 import Title from '../lib/title/title';
 import HighlightBox from '../lib/highlight-box/highlight-box';
 import Root from '../lib/root/root';
-import getGeneration from '../utils/request-generation';
+import { getGeneration } from '../utils/request-generation';
 
 function Prompt() {
   const [userInput, setUserInput] = useState('');
