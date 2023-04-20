@@ -1,50 +1,95 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Button from '../lib/button/button';
+import getGeneration from '../utils/get-generation';
+import { useSpeechSynthesis } from 'react-speech-kit';
 
 function AudioCall() {
   const {
     transcript,
-    interimTranscript,
-    finalTranscript,
     resetTranscript,
     browserSupportsSpeechRecognition,
     listening,
   } = useSpeechRecognition();
-  if (!browserSupportsSpeechRecognition) {
+  const [generation, setGeneration] = useState('');
+  const [isGenerating, setIsGenerating] = useState(false);
+  const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis();
+  const englishVoices = voices.filter(voice => voice.lang.includes('en'));
+  const [chat, setChat] = useState([{ user: '', JEN: '' }]);
+  const [conversationStatus, setConversationStatus] = useState('not-started');
+  if (!browserSupportsSpeechRecognition || !supported) {
     return (
       <>
         <p>
           your browser does not support this feature.
         </p>
         <p>
-          if possible, i recommend trying google chrome or safari!
+          if possible, i recommend trying google chrome!
         </p>
       </>
     );
   }
-  useEffect(() => {
-    console.log('here', interimTranscript);
-  }, [interimTranscript, finalTranscript]);
   const startListening = () => {
     SpeechRecognition.startListening({ continuous: true });
+    setConversationStatus('open');
+  };
+  const stopListening = async () => {
+    SpeechRecognition.stopListening();
+    resetTranscript();
+    await getResponse();
+    updateConversation();
+  }
+  const getResponse = async () => {
+    setIsGenerating(true);
+    const responseText = await getGeneration(transcript);
+    setIsGenerating(false);
+    setGeneration(responseText);
+  };
+  const updateConversation = () => {
+    speak({ text, voice: englishVoices[0] });
+    setChat([...chat, { user: transcript, JEN: text }]);
+  };
+  const endCall = () => {
+    if (listening) {
+      SpeechRecognition.stopListening();
+    }
+    setConversationStatus('closed');
   };
   return (
     <>
       <Button onClickAction={startListening}>open call</Button>
-      { listening ? (
-        <>
-          {/* <Button onClickAction={SpeechRecognition.stopListening}>end call</Button> */}
-          <button type="button" onClick={SpeechRecognition.stopListening}>close</button>
-          <div>
-            <h4>audio transcript</h4>
-            <p>{ transcript }</p>
-            {/* <Button onClickAction={resetTranscript}>reset</Button> */}
-            <button type="button" onClick={resetTranscript}>reset</button>
-          </div>
-        </>
-      ) : '' }
+      { conversationStatus === 'open'
+          ? (
+            <>
+              <h4>audio transcript</h4>
+              {
+                chat.map((el) => (
+                  <>
+                    <p>you: {el.user}</p>
+                    <p>jen: {el.JEN}</p>             
+                  </>
+                ))
+              }
+              <div style={{ width: '300px' }}>
+                <Button onClickAction={stopListening}>stop recording</Button>
+                <Button onClickAction={resetTranscript}>reset recording</Button>
+                <Button onClickAction={endCall}>end call</Button>
+              </div>
+              <p>{ transcript }</p>
+            </>
+          )
+          : conversationStatus === 'closed'
+            ? (
+                <>
+                  <p>thanks for today&apos;s great session :)</p>
+                  <p>you can see this session again in ur bookmarks.</p>
+                </>)
+            : (
+              <>
+                <p>hi! excited for today&apos;s session? call away!</p>
+              </>
+            )}
     </>
   );
 }
