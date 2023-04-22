@@ -395,6 +395,21 @@
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
+"@speechly/browser-client@^2.4.1":
+  version "2.6.5"
+  resolved "https://registry.npmjs.org/@speechly/browser-client/-/browser-client-2.6.5.tgz"
+  integrity sha512-c5kUrcwEROuaIXnu25Qgl/7N5cOZhVfcRd5xWdG71OsBXG7VROmu5nv4SOAUdzW8x1xF1UEBFAByVbcLXlszsw==
+  dependencies:
+    base-64 "^0.1.0"
+    uuid "^8.0.0"
+
+"@speechly/speech-recognition-polyfill@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/@speechly/speech-recognition-polyfill/-/speech-recognition-polyfill-1.3.0.tgz"
+  integrity sha512-klpZhJqAyy8pG8afkoZzXYKR1H0Y5tTEfSRB15pZNfDH1nB0IHmtsAZ32FpGztwRhTgl46po7Hvl/H1WtoXZuA==
+  dependencies:
+    "@speechly/browser-client" "^2.4.1"
+
 "@swc/helpers@0.4.11":
   version "0.4.11"
   resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.4.11.tgz"
@@ -601,6 +616,11 @@ balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
+
+base-64@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/base-64/-/base-64-0.1.0.tgz"
+  integrity sha512-Y5gU45svrR5tI2Vt/X9GPd3L0HNIKzGu202EjxrXMpuc2V2CiKgemAbUUsqYmZJvPtCXoUKjNZwBJzsNScUbXA==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -2148,12 +2168,12 @@ react-is@^16.13.1, react-is@^16.7.0:
 
 react-speech-kit@^3.0.1:
   version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-speech-kit/-/react-speech-kit-3.0.1.tgz#8bd936adfe064be1c5a07e2992dfdfd772e80d14"
+  resolved "https://registry.npmjs.org/react-speech-kit/-/react-speech-kit-3.0.1.tgz"
   integrity sha512-MXNOciISanhmnxpHJkBOev3M3NPDpW1T7nTc/eGw5pO9cXpoUccRxZkmr/IlpTPbPEneDNeTmbwri/YweyctZg==
 
 react-speech-recognition@^3.10.0:
   version "3.10.0"
-  resolved "https://registry.npmjs.org/react-speech-recognition/-/react-speech-recognition-3.10.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-speech-recognition/-/react-speech-recognition-3.10.0.tgz#7aa43bb28d78b92671864dabba3a70489ccad27b"
   integrity sha512-EVSr4Ik8l9urwdPiK2r0+ADrLyDDrjB0qBRdUWO+w2MfwEBrj6NuRmy1GD3x7BU/V6/hab0pl8Lupen0zwlJyw==
 
 react@18.2.0:
@@ -2461,7 +2481,7 @@ use-sync-external-store@1.2.0:
   resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
-uuid@^8.3.2:
+uuid@^8.0.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
