@@ -45,7 +45,7 @@ const callGenerateEndpoint = async () => {
             <h2>Discover Love on the Go with a Free Mobile Dating App for Singles</h2>
           </div>
         </div>
-        {/* Add this code here*/}    
+        {/* Add this code here*/}
         <div className="prompt-container">
           <textarea
             className="prompt-box"
