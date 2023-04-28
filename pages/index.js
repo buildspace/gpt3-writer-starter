@@ -34,7 +34,7 @@ const callGenerateEndpoint = async () => {
   return (
     <div className="root">
       <Head>
-        <title>C.R.E.A.T.E | buildspace</title>
+        <title>GPT-3 Writer | buildspace</title>
       </Head>
       <div className="container">
         <div className="header">
@@ -49,7 +49,7 @@ const callGenerateEndpoint = async () => {
         <div className="prompt-container">
           <textarea
             className="prompt-box"
-            placeholder="Welcome to C.R.E.A.T.E lets build it together"
+            placeholder="start typing here"
             value={userInput}
             onChange={onUserChangedText}
           />
@@ -86,7 +86,7 @@ const callGenerateEndpoint = async () => {
           rel="noreferrer"
         >
           <div className="badge">
-            <Image src={buildspace-Logo.png} alt="buildspace logo" />
+            <Image src={buildspaceLogo} alt="buildspace logo" />
             <p>build with buildspace</p>
           </div>
         </a>
