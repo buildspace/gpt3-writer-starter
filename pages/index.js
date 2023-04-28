@@ -39,10 +39,10 @@ const callGenerateEndpoint = async () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Create Your Own Mobile Dating App</h1>
+            <h1>A Construction Bot That Makes Home Projects Easier</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Discover Love on the Go with a Free Mobile Dating App for Singles</h2>
+            <h2> AI-Powered Assistance for Contractors and DIY Enthusiasts Alike</h2>
           </div>
         </div>
         {/* Add this code here*/}
