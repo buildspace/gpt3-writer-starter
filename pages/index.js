@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import buildspaceLogo from '../assets/buildspace-logo.png';
+import logo1_edited from '../assets/logo1_unedited.jpg';
 
 const Home = () => {
   const [userInput, setUserInput] = useState("");
@@ -49,7 +49,7 @@ const callGenerateEndpoint = async () => {
         <div className="prompt-container">
           <textarea
             className="prompt-box"
-            placeholder="Welcome to C.R.E.A.T.E lets builkd it together"
+            placeholder="Welcome to C.R.E.A.T.E lets build it together"
             value={userInput}
             onChange={onUserChangedText}
           />
@@ -86,8 +86,8 @@ const callGenerateEndpoint = async () => {
           rel="noreferrer"
         >
           <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
+            <Image src={logo1_edited.jpg} alt="buildspace logo" />
+            <p>build with C.R.E.A.T.E</p>
           </div>
         </a>
       </div>
