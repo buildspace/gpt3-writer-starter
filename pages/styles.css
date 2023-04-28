@@ -79,7 +79,6 @@ body {
 }
 
 .prompt-box {
-    background-image: url("logo1_edited.jpg");
     border-bottom-width: 1px;
     border-color: rgba(255, 255, 255, 0.1);
     border-left-width: 1px;
@@ -88,7 +87,7 @@ body {
     border-top-width: 1px;
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-image: url("logo1_edited.jpg");
     border-radius: 16px;
     display: flex;
     flex: 0 0 auto;
