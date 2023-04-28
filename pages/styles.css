@@ -87,7 +87,7 @@ body {
     border-top-width: 1px;
     place-content: flex-start;
     align-items: flex-start;
-    background-image: url("logo1_edited.jpg");
+    background-color: rgb(230, 238, 240);
     border-radius: 16px;
     display: flex;
     flex: 0 0 auto;
