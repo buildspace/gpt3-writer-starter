@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import logo1_edited from '../assets/logo1_unedited.jpg';
+import logo1_edited from '../assets/logo1_edited.jpg';
 
 const Home = () => {
   const [userInput, setUserInput] = useState("");
