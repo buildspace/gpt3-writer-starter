@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(231, 14, 14);
+    background-color: rgb(0, 0, 0);
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -35,12 +35,12 @@ body {
     gap: 64px;
 }
 
-.header {
+.header {    
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #c4adad
+    color: #FFF
 }
 
 .header-title {
@@ -63,7 +63,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
-    color: rgba(74, 21, 219, 0.75);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .prompt-container {
@@ -81,13 +81,13 @@ body {
 .prompt-box {
     border-bottom-width: 1px;
     border-color: rgba(255, 255, 255, 0.1);
-    border-left-width: 5px;
-    border-right-width: 5px;
+    border-left-width: 1px;
+    border-right-width: 1px;
     border-style: solid;
-    border-top-width: 5px;
+    border-top-width: 1px;
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(13, 230, 103, 0.959);
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     display: flex;
     flex: 0 0 auto;
