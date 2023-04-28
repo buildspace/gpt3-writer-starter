@@ -49,7 +49,7 @@ const callGenerateEndpoint = async () => {
         <div className="prompt-container">
           <textarea
             className="prompt-box"
-            placeholder="start typing here"
+            placeholder="Hello I am C.R.E.A.T.E, lets create something together"
             value={userInput}
             onChange={onUserChangedText}
           />
