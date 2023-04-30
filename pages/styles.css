@@ -55,6 +55,7 @@ body {
     letter-spacing: -4px;
     line-height: 1.2em;
     text-align: center;
+
     margin: 0;
 }
 
@@ -79,6 +80,7 @@ body {
 }
 
 .prompt-box {
+    box-shadow: 10px 10px 5px red;
     border-bottom-width: 1px;
     border-color: rgba(255, 255, 255, 0.1);
     border-left-width: 1px;
@@ -109,6 +111,7 @@ body {
     line-height: 1.6em;
     text-align: start;
     color: rgba(255, 255, 255, 0.75);
+    text-shadow: 10px 10px 12px 5px red;
     text-decoration: none;
     text-transform: none;
 }
