@@ -80,7 +80,6 @@ body {
 }
 
 .prompt-box {
-    background-image: url(assets/C.R.E.A.T.E-logo.png);
     box-shadow: 10px 10px 5px red;
     border-bottom-width: 1px;
     border-color: rgba(255, 255, 255, 0.1);
