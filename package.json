@@ -11,8 +11,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "eslint": "8.27.0",
-    "eslint-config-next": "13.0.3",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.4",
     "framer-motion": "^6.5.1",
     "next": "^13.0.3",
     "openai": "^3.2.1",
