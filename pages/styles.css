@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-image: url(images/ThisBitch.jpeg);
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
