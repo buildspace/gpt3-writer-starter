@@ -34,22 +34,22 @@ const callGenerateEndpoint = async () => {
   return (
     <div className="root">
       <Head>
-        <title>C.R.E.A.T.E | buildspace</title>
+        <title>K.A.S.H | buildspace</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>A Construction AI Assistant That Makes Home Projects Easier</h1>
+            <h1>A Kids Autonomous Story Helper</h1>
           </div>
           <div className="header-subtitle">
-            <h2> AI-Powered Assistance for Contractors and DIY Enthusiasts Alike</h2>
+            <h2> AI-Powered Story Teller to bring ur childs imagination to life</h2>
           </div>
         </div>
         {/* Add this code here*/}
         <div className="prompt-container">
           <textarea
             className="prompt-box"
-            placeholder="Hello I am C.R.E.A.T.E, lets create your dream"
+            placeholder="Hello I am K.A.S.H, lets create your Story"
             value={userInput}
             onChange={onUserChangedText}
           />
@@ -69,7 +69,7 @@ const callGenerateEndpoint = async () => {
           <div className="output">
             <div className="output-header-container">
               <div className="output-header">
-                <h3>Output</h3>
+                <h3>STORY</h3>
               </div>
             </div>
             <div className="output-content">
