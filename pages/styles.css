@@ -35,7 +35,7 @@ body {
     gap: 64px;
 }
 
-.header {    
+.header {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -388,6 +388,16 @@ textarea {
     .prompt-box {
         width: 100%;
     }
+}
+
+
+
+
+.copy-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
 }
 
 
