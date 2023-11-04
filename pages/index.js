@@ -16,12 +16,11 @@ const Home = () => {
     if (currentQuestion < totalQuestions - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      const prompt = userAnswers.join("\n");
-      callGenerateEndpoint(prompt);
+      callGenerateEndpoint(userAnswers);
     }
   };
 
-  const callGenerateEndpoint = async (prompt) => {
+  const callGenerateEndpoint = async (answers) => {
     setIsGenerating(true);
     console.log("Calling OpenAI...");
     const response = await fetch("/api/generate", {
@@ -29,7 +28,7 @@ const Home = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ userInput: prompt }),
+      body: JSON.stringify({ userInput: answers }),
     });
 
     const data = await response.json();
@@ -51,46 +50,57 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Was tun nach dem Abitur?</h1>
+            {!apiOutput && (
+              <h1>Was tun nach dem Abitur?</h1>
+            )}
+            {apiOutput && (
+              <h1>Dein Ergebnis</h1>
+            )}
           </div>
-          <div className="header-subtitle center-text">
-            <h2>
-              Beantworte 3 Fragen zu deiner Persönlichkeit und du erhältst
-              kostenlos eine persönliche Empfehlung, was dein passender Weg nach
-              dem Abitur sein kann!
-            </h2>
-          </div>
+            <div className="header-subtitle center-text">
+            {!apiOutput && (
+              <h2>
+                Beantworte 3 Fragen zu deiner Persönlichkeit und du erhältst
+                kostenlos eine persönliche Empfehlung, was dein passender Weg nach
+                dem Abitur sein kann!
+              </h2>
+            )}
+            </div>
         </div>
-        <div className="prompt-container">
-          <p className="question-text" style={{ color: "white" }}>
-            {questionList[currentQuestion]}
-          </p>
+        {!apiOutput && (
           <div className="prompt-container">
-            <textarea
-              placeholder={`Antwort auf Frage ${currentQuestion + 1}`}
-              className="prompt-box" /* Add the class name here */
-              value={userAnswers[currentQuestion]}
-              onChange={onUserChangedText}
-            />
+            <p className="question-text" style={{ color: "white" }}>
+              {questionList[currentQuestion]}
+            </p>
+            <div className="prompt-container">
+              <textarea
+                placeholder={`Antwort auf Frage ${currentQuestion + 1}`}
+                className="prompt-box" /* Add the class name here */
+                value={userAnswers[currentQuestion]}
+                onChange={onUserChangedText}
+              />
+            </div>
           </div>
-        </div>
-        <div className="prompt-buttons">
-          {currentQuestion < totalQuestions - 1 && (
-            <a className="generate-button" onClick={handleNextQuestion}>
-              Nächste Frage
-            </a>
-          )}
-          {currentQuestion === totalQuestions - 1 && (
-            <a
-              className={
-                isGenerating ? "generate-button loading" : "generate-button"
-              }
-              onClick={handleNextQuestion}
-            >
-              Antwort bekommen
-            </a>
-          )}
-        </div>
+        )}
+        {!apiOutput && (
+          <div className="prompt-buttons">
+            {currentQuestion < totalQuestions - 1 && (
+              <a className="generate-button" onClick={handleNextQuestion}>
+                Nächste Frage
+              </a>
+            )}
+            {currentQuestion === totalQuestions - 1 && (
+              <a
+                className={
+                  isGenerating ? "generate-button loading" : "generate-button"
+                }
+                onClick={handleNextQuestion}
+              >
+                Antwort bekommen
+              </a>
+            )}
+          </div>
+        )}
         {apiOutput && (
           <div className="output">
             <div className="output-content">
