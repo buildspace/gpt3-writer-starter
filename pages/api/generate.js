@@ -26,10 +26,10 @@ const generateAction = async (req, res) => {
   console.log(`promptTemplate: ${promptTemplate}`);
 
   // create a handler
-  const langfuseHandler = new CallbackHandler({
-    publicKey: process.env.LF_PUBLIC_KEY,
-    secretKey: process.env.LF_SECRET_KEY,
-  });
+  // const langfuseHandler = new CallbackHandler({
+  //   publicKey: process.env.LF_PUBLIC_KEY,
+  //   secretKey: process.env.LF_SECRET_KEY,
+  // });
 
   // create a model
   const model = new OpenAI({
@@ -43,14 +43,16 @@ const generateAction = async (req, res) => {
   const chain = new LLMChain({
     llm: model,
     prompt,
-    callbacks: [langfuseHandler],
+    // callbacks: [langfuseHandler],
   });
 
   // execute the chain
   const result = await chain.call(
     { answer_1: answers[0], answer_2: answers[1], answer_3: answers[2] },
-    { callbacks: [langfuseHandler] }
+    // { callbacks: [langfuseHandler] }
   );
+
+  console.log(`raw result: ${result}`)
 
   const resultText = result["text"];
 
